@@ -13,7 +13,7 @@ class ListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        AssertDataController.sharedInstance.prepar()
     }
 
     override func didReceiveMemoryWarning() {
