@@ -18,9 +18,6 @@ class MainScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
     }
 
     @IBAction func showListView(sender: AnyObject) {

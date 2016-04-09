@@ -13,23 +13,20 @@ class AssertDataController: NSObject {
     
     static let sharedInstance = AssertDataController()
     
-    override init() {
-        print("init class")
-    }
+    var dataItem:DataItem! = nil
     
-    func prepar() {
-        
+    override init() {
         let resourcePath = NSBundle.mainBundle().resourcePath!
-
-        print(resourcePath)
         let fileDestinationUrl = NSURL(fileURLWithPath:resourcePath + "/data.json")
         
         do {
             let mytext = try String(contentsOfURL: fileDestinationUrl, encoding: NSUTF8StringEncoding)
-            print(mytext)
-        } catch let error as NSError {
+            let data = mytext.dataUsingEncoding(NSUTF8StringEncoding)
+            let json: NSDictionary = try (NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary)!
+            dataItem = DataItem(json: json)
+            
+        } catch {
             print("error loading from url \(fileDestinationUrl)")
-            print(error.localizedDescription)
         }
     }
 }
