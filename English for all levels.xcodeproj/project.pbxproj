@@ -33,7 +33,6 @@
 		335BF69C1CB662F600EE1177 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BF6991CB662F600EE1177 /* ViewController.swift */; };
 		335BF6C01CB69CEB00EE1177 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BF6BE1CB69CEB00EE1177 /* ListView.swift */; };
 		335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335BF6BF1CB69CEB00EE1177 /* ListView.xib */; };
-		33B5CDD51CB8AF7A00A4FB79 /* ListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5CDD41CB8AF7A00A4FB79 /* ListViewDataSource.swift */; };
 		33B5CDD81CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */; };
 		33B5CDD91CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -67,7 +66,6 @@
 		335BF6991CB662F600EE1177 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		335BF6BE1CB69CEB00EE1177 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = ViewControllers/ListView/ListView.swift; sourceTree = "<group>"; };
 		335BF6BF1CB69CEB00EE1177 /* ListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListView.xib; path = ViewControllers/ListView/ListView.xib; sourceTree = "<group>"; };
-		33B5CDD41CB8AF7A00A4FB79 /* ListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewDataSource.swift; path = ViewControllers/ListView/ListViewDataSource.swift; sourceTree = "<group>"; };
 		33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItemUITableViewCell.swift; path = ViewControllers/ListView/DataItemUITableViewCell.swift; sourceTree = "<group>"; };
 		33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataItemUITableViewCell.xib; path = ViewControllers/ListView/DataItemUITableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +175,6 @@
 			children = (
 				335BF6BE1CB69CEB00EE1177 /* ListView.swift */,
 				335BF6BF1CB69CEB00EE1177 /* ListView.xib */,
-				33B5CDD41CB8AF7A00A4FB79 /* ListViewDataSource.swift */,
 				33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */,
 				33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */,
 			);
@@ -280,7 +277,6 @@
 				335BF6951CB65D0B00EE1177 /* MainScreen.swift in Sources */,
 				335BF67A1CB657D500EE1177 /* AppDelegate.swift in Sources */,
 				335B573F1CB6A70D0070D090 /* AssertDataController.swift in Sources */,
-				33B5CDD51CB8AF7A00A4FB79 /* ListViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,11 +18,11 @@ class MainScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
     }
 
     @IBAction func showListView(sender: AnyObject) {
-        self.view.window?.rootViewController = ListView()
-        self.view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(ListView(dataItem: AssertDataController.sharedInstance.dataItem), animated: true)
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -31,6 +31,7 @@ class MainScreen: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
         
         rearrangeGraphics()
     }
