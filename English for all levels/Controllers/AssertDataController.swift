@@ -13,7 +13,9 @@ class AssertDataController: NSObject {
     
     static let sharedInstance = AssertDataController()
     
-    var dataItem:DataItem! = nil
+    var assetData:DataItem! = nil
+    var grammarData: DataItem! = nil
+    var examination: DataItem! = nil
     
     override init() {
         let resourcePath = NSBundle.mainBundle().resourcePath!
@@ -21,12 +23,29 @@ class AssertDataController: NSObject {
         
         do {
             let mytext = try String(contentsOfURL: fileDestinationUrl, encoding: NSUTF8StringEncoding)
-            let data = mytext.dataUsingEncoding(NSUTF8StringEncoding)
-            let json: NSDictionary = try (NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary)!
-            dataItem = DataItem(json: json)
+            self.assetData = AssertDataController.decodeJson(mytext)
             
         } catch {
             print("error loading from url \(fileDestinationUrl)")
         }
+    }
+    
+    class func decodeJson(text: NSString) -> DataItem{
+        do{
+            let nsData = text.dataUsingEncoding(NSUTF8StringEncoding)
+            let json: NSDictionary = try (NSJSONSerialization.JSONObjectWithData(nsData!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary)!
+        return DataItem(json: json)
+            
+        }catch{
+            return DataItem()
+        }
+    }
+    
+    func loadGramarData(data: String){
+        grammarData = AssertDataController.decodeJson(data)
+    }
+    
+    func loadExaminaton(data: String){
+        examination = AssertDataController.decodeJson(data)
     }
 }

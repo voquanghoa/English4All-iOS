@@ -13,6 +13,10 @@ class DataItem : NSObject {
     var display: String = "";
     var children: [DataItem] = []
     
+    override init() {
+        
+    }
+    
     init(json: NSDictionary) {
         self.fileName = json["fileName"] as! String
         self.display = json["display"] as! String

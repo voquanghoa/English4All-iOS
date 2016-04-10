@@ -35,6 +35,8 @@
 		33C9CBA31CBA9877004061EA /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CBA11CBA9877004061EA /* MainScreen.swift */; };
 		33C9CBA41CBA9877004061EA /* MainScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C9CBA21CBA9877004061EA /* MainScreen.xib */; };
 		33C9CBA71CBA98B3004061EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CBA61CBA98B3004061EA /* AppDelegate.swift */; };
+		33C9CBA91CBA9E57004061EA /* HttpDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */; };
+		33C9CBAC1CBAB49A004061EA /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CBAB1CBAB49A004061EA /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		33C9CBA11CBA9877004061EA /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreen.swift; path = ViewControllers/MainScreen/MainScreen.swift; sourceTree = "<group>"; };
 		33C9CBA21CBA9877004061EA /* MainScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainScreen.xib; path = ViewControllers/MainScreen/MainScreen.xib; sourceTree = "<group>"; };
 		33C9CBA61CBA98B3004061EA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate/AppDelegate.swift; sourceTree = "<group>"; };
+		33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpDownloader.swift; path = Controllers/HttpDownloader.swift; sourceTree = "<group>"; };
+		33C9CBAB1CBAB49A004061EA /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = ViewControllers/Utils/ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				33C9CB9F1CBA983E004061EA /* AssertDataController.swift */,
+				33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 		335BF68E1CB65C2B00EE1177 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				33C9CBAA1CBAB473004061EA /* Utils */,
 				335BF6BD1CB69CA600EE1177 /* ListView */,
 				335BF68F1CB65C8F00EE1177 /* MainScreen */,
 			);
@@ -187,6 +193,14 @@
 				33C9CBA61CBA98B3004061EA /* AppDelegate.swift */,
 			);
 			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		33C9CBAA1CBAB473004061EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				33C9CBAB1CBAB49A004061EA /* ActivityViewController.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C9CBA91CBA9E57004061EA /* HttpDownloader.swift in Sources */,
 				335BF6C01CB69CEB00EE1177 /* ListView.swift in Sources */,
 				33C9CBA31CBA9877004061EA /* MainScreen.swift in Sources */,
+				33C9CBAC1CBAB49A004061EA /* ActivityViewController.swift in Sources */,
 				3310E68A1CB805370021B8FE /* File.swift in Sources */,
 				33C9CBA01CBA983E004061EA /* AssertDataController.swift in Sources */,
 				33C9CBA71CBA98B3004061EA /* AppDelegate.swift in Sources */,
