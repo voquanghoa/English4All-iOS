@@ -21,8 +21,11 @@ class MainScreen: UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
 
-    @IBAction func showListView(sender: AnyObject) {
+    @IBAction func onOfflineClicked(sender: AnyObject) {
         self.navigationController?.pushViewController(ListView(dataItem: AssertDataController.sharedInstance.dataItem), animated: true)
+    }
+    @IBAction func showListView(sender: AnyObject) {
+        
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -66,7 +69,7 @@ class MainScreen: UIViewController {
         
         let iconRight =  commonRight - iconSize
         
-        for i in 0...4{
+        for i in 0...4 {
             if (i % 2 == 0){
                 icons[i].frame = CGRectMake(commonLeft, topItem, iconSize, iconSize)
                 buttons[i].frame = CGRectMake(commonRight - buttonWidth, topItem , buttonWidth, buttonHeight)

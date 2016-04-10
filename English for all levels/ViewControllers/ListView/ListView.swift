@@ -24,7 +24,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.ListItemView.rowHeight = 1000
     }
     
     override func viewDidLoad() {
@@ -35,11 +34,6 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.ListItemView.registerNib(UINib(nibName: "DataItemUITableViewCell", bundle: nil), forCellReuseIdentifier: "DataItemUITableViewCell")
         self.ListItemView.dataSource = self
         self.ListItemView.delegate = self
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-    {
-        return 60.0
     }
     
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {

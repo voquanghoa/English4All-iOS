@@ -62,6 +62,9 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-fB-UMh">
                     <rect key="frame" x="86" y="310" width="328" height="68"/>
                     <state key="normal" title="Button" image="main_menu_study_offline_button.png"/>
+                    <connections>
+                        <action selector="onOfflineClicked:" destination="-1" eventType="touchUpInside" id="HLi-nw-vyd"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-rW-h40">
                     <rect key="frame" x="19" y="404" width="328" height="68"/>
@@ -86,7 +89,7 @@
                 <constraint firstAttribute="trailing" secondItem="47d-df-zOg" secondAttribute="trailing" constant="8" id="lyO-LG-Bnx"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <point key="canvasLocation" x="478" y="395.5"/>
+            <point key="canvasLocation" x="449" y="82"/>
         </view>
     </objects>
     <resources>
