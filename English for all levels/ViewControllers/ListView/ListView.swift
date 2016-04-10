@@ -22,12 +22,24 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.ListItemView.rowHeight = 1000
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ListItemView.backgroundColor = UIColor.clearColor()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.title = self.dataItem.display
         self.ListItemView.registerNib(UINib(nibName: "DataItemUITableViewCell", bundle: nil), forCellReuseIdentifier: "DataItemUITableViewCell")
         self.ListItemView.dataSource = self
         self.ListItemView.delegate = self
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 60.0
     }
     
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -37,6 +49,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataItem.children.count
     }
+    
     @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = ListItemView.dequeueReusableCellWithIdentifier("DataItemUITableViewCell", forIndexPath: indexPath) as! DataItemUITableViewCell
@@ -44,7 +57,7 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let fruit = self.dataItem.children[indexPath.row].display
         
         cell.setLabelText(fruit)
-        
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
     

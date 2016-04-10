@@ -17,7 +17,7 @@ class AssertDataController: NSObject {
     
     override init() {
         let resourcePath = NSBundle.mainBundle().resourcePath!
-        let fileDestinationUrl = NSURL(fileURLWithPath:resourcePath + "/data.json")
+        let fileDestinationUrl = NSURL(fileURLWithPath:resourcePath + "/assets/data.json")
         
         do {
             let mytext = try String(contentsOfURL: fileDestinationUrl, encoding: NSUTF8StringEncoding)

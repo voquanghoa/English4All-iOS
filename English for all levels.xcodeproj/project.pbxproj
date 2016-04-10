@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3310E68A1CB805370021B8FE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310E6891CB805370021B8FE /* File.swift */; };
-		333795511CB7AC75002444F0 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 333795501CB7AC75002444F0 /* data.json */; };
 		333795531CB7B19C002444F0 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 333795521CB7B19B002444F0 /* assets */; };
 		3352B7D21CB95599003F3C34 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C51CB95599003F3C34 /* back_button.png */; };
 		3352B7D31CB95599003F3C34 /* main_menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C61CB95599003F3C34 /* main_menu_bg.png */; };
@@ -35,11 +34,12 @@
 		335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335BF6BF1CB69CEB00EE1177 /* ListView.xib */; };
 		33B5CDD81CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */; };
 		33B5CDD91CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */; };
+		33BF836D1CB9DCE500FFDAD5 /* button_listview1.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */; };
+		33BF836E1CB9DCE500FFDAD5 /* button_listview2.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BF836C1CB9DCE500FFDAD5 /* button_listview2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3310E6891CB805370021B8FE /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = AppModel/File.swift; sourceTree = "<group>"; };
-		333795501CB7AC75002444F0 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		333795521CB7B19B002444F0 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		3352B7C51CB95599003F3C34 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = Images/back_button.png; sourceTree = "<group>"; };
 		3352B7C61CB95599003F3C34 /* main_menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_bg.png; path = Images/main_menu_bg.png; sourceTree = "<group>"; };
@@ -68,6 +68,8 @@
 		335BF6BF1CB69CEB00EE1177 /* ListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListView.xib; path = ViewControllers/ListView/ListView.xib; sourceTree = "<group>"; };
 		33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItemUITableViewCell.swift; path = ViewControllers/ListView/DataItemUITableViewCell.swift; sourceTree = "<group>"; };
 		33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataItemUITableViewCell.xib; path = ViewControllers/ListView/DataItemUITableViewCell.xib; sourceTree = "<group>"; };
+		33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_listview1.png; path = Images/button_listview1.png; sourceTree = "<group>"; };
+		33BF836C1CB9DCE500FFDAD5 /* button_listview2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_listview2.png; path = Images/button_listview2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,6 @@
 			children = (
 				3310E6881CB805180021B8FE /* AppModel */,
 				333795521CB7B19B002444F0 /* assets */,
-				333795501CB7AC75002444F0 /* data.json */,
 				335B573D1CB6A6CB0070D090 /* DataControllers */,
 				335BF6A41CB6675500EE1177 /* Images */,
 				335BF6971CB662F600EE1177 /* LaunchScreen.storyboard */,
@@ -152,6 +153,8 @@
 		335BF6A41CB6675500EE1177 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */,
+				33BF836C1CB9DCE500FFDAD5 /* button_listview2.png */,
 				3352B7DF1CB955BB003F3C34 /* listview_background.png */,
 				3352B7C51CB95599003F3C34 /* back_button.png */,
 				3352B7C61CB95599003F3C34 /* main_menu_bg.png */,
@@ -243,8 +246,9 @@
 				3352B7D81CB95599003F3C34 /* main_menu_header.png in Resources */,
 				335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */,
 				3352B7D91CB95599003F3C34 /* main_menu_listen_button.png in Resources */,
+				33BF836D1CB9DCE500FFDAD5 /* button_listview1.png in Resources */,
 				3352B7D61CB95599003F3C34 /* main_menu_grammar_button.png in Resources */,
-				333795511CB7AC75002444F0 /* data.json in Resources */,
+				33BF836E1CB9DCE500FFDAD5 /* button_listview2.png in Resources */,
 				3352B7DC1CB95599003F3C34 /* main_menu_ranking_icon.png in Resources */,
 				3352B7D51CB95599003F3C34 /* main_menu_examination_icon.png in Resources */,
 				3352B7D71CB95599003F3C34 /* main_menu_grammar_icon.png in Resources */,
