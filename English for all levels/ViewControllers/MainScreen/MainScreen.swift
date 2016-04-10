@@ -90,8 +90,6 @@ class MainScreen: UIViewController {
         self.navigationController?.pushViewController(ListView(dataItem: AssertDataController.sharedInstance.assetData), animated: true)
     }
     
-    
-
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         rearrangeGraphics()
@@ -100,13 +98,11 @@ class MainScreen: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
-        
         rearrangeGraphics()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func rearrangeGraphics()  {
