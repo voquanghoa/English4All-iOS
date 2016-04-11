@@ -23,4 +23,14 @@ class ViewUtils: NSObject {
     
         return createAlert
     }
+    
+    class func getViewContentHeight(textView: UITextView) -> CGFloat{
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame;
+        return newSize.height
+    }
 }

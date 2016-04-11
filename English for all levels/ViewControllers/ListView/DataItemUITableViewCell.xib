@@ -14,20 +14,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="331" height="98.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_listview1.png" id="RXL-sV-zhH">
-                        <rect key="frame" x="8" y="8" width="315" height="82.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_listview2.png" id="RXL-sV-zhH">
+                        <rect key="frame" x="0.0" y="3" width="330" height="92"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_listview1.png" id="TaY-fH-eRS">
+                        <rect key="frame" x="4" y="3" width="322" height="92"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="DataItemUITableViewCell" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uQY-qN-AZb">
-                        <rect key="frame" x="13" y="0.0" width="304" height="98.5"/>
+                        <rect key="frame" x="13" y="2" width="304" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="fileBackground" destination="RXL-sV-zhH" id="F9H-vQ-rgX"/>
+                <outlet property="folderBackground" destination="TaY-fH-eRS" id="iPI-dw-lVJ"/>
                 <outlet property="label" destination="uQY-qN-AZb" id="vU5-8K-yr4"/>
             </connections>
             <point key="canvasLocation" x="251.5" y="216.5"/>
@@ -35,5 +41,6 @@
     </objects>
     <resources>
         <image name="button_listview1.png" width="965" height="155"/>
+        <image name="button_listview2.png" width="1080" height="160"/>
     </resources>
 </document>

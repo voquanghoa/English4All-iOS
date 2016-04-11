@@ -11,19 +11,16 @@ import UIKit
 class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var ListItemView: UITableView!
     var dataItem:DataItem!
+    var path: String!
     
-    convenience init(dataItem: DataItem) {
+    convenience init(dataItem: DataItem, parentPath: String) {
         self.init()
-        
+        self.path = "\(parentPath)/\(dataItem.fileName)"
         self.dataItem = dataItem
     }
     
     @IBAction func onBack(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
     
     override func viewDidLoad() {
@@ -47,22 +44,36 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = ListItemView.dequeueReusableCellWithIdentifier("DataItemUITableViewCell", forIndexPath: indexPath) as! DataItemUITableViewCell
+        let dataItem = self.dataItem.children[indexPath.row]
         
-        let fruit = self.dataItem.children[indexPath.row].display
-        
-        cell.setLabelText(fruit)
+        cell.setLabelText(dataItem.display)
         cell.backgroundColor = UIColor.clearColor()
+        cell.setViewStyle(dataItem.children.count == 0)
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let nextItem = self.dataItem.children[indexPath.row]
+        let selectedItem = self.dataItem.children[indexPath.row]
         
-        if(nextItem.children.count > 0){
-            let childDataItem = self.dataItem.children[indexPath.row]
-            self.navigationController?.pushViewController(ListView(dataItem: childDataItem), animated: true)
+        if(selectedItem.children.count > 0){
+            self.navigationController?.pushViewController(ListView(dataItem: selectedItem, parentPath: self.path), animated: true)
         }else{
-            print("Can not enter")
+            prepareShowTestContent(selectedItem)
         }
+    }
+    
+    func prepareShowTestContent(selectedItem: DataItem){
+        let selectedPath = "\(path)/\(selectedItem.fileName)"
+        
+        if (selectedPath.containsString("/assets/")){
+            let testContent = ContentController.loadTestContent(selectedPath)
+            showTestContent(testContent)
+        }
+        
+    }
+    
+    func showTestContent(testContent: TestContent){
+        self.navigationController?.pushViewController(Lesson(testContent: testContent), animated: true)
     }
 }

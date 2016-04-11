@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3310E68A1CB805370021B8FE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310E6891CB805370021B8FE /* File.swift */; };
+		331073321CBB94EE004E11A7 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331073311CBB94EE004E11A7 /* ContentController.swift */; };
+		3310E68A1CB805370021B8FE /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310E6891CB805370021B8FE /* DataItem.swift */; };
 		333795531CB7B19C002444F0 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 333795521CB7B19B002444F0 /* assets */; };
 		3352B7D21CB95599003F3C34 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C51CB95599003F3C34 /* back_button.png */; };
 		3352B7D31CB95599003F3C34 /* main_menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C61CB95599003F3C34 /* main_menu_bg.png */; };
@@ -28,6 +29,13 @@
 		335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335BF6BF1CB69CEB00EE1177 /* ListView.xib */; };
 		336CE3C71CBB441F000380A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336CE3C61CBB441F000380A4 /* LaunchScreen.storyboard */; };
 		336CE3CB1CBB4E40000380A4 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */; };
+		336CE3CF1CBB5098000380A4 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336CE3CD1CBB5098000380A4 /* Lesson.swift */; };
+		336CE3D01CBB5098000380A4 /* Lesson.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336CE3CE1CBB5098000380A4 /* Lesson.xib */; };
+		336CE3D41CBB521D000380A4 /* quiz_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 336CE3D31CBB521D000380A4 /* quiz_background.png */; };
+		336CE3D71CBB54BD000380A4 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336CE3D51CBB54BD000380A4 /* LessonViewCell.swift */; };
+		336CE3D81CBB54BD000380A4 /* LessonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336CE3D61CBB54BD000380A4 /* LessonViewCell.xib */; };
+		336CE3DA1CBB5584000380A4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336CE3D91CBB5584000380A4 /* Question.swift */; };
+		336CE3DC1CBB56A1000380A4 /* TestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336CE3DB1CBB56A1000380A4 /* TestContent.swift */; };
 		33B5CDD81CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */; };
 		33B5CDD91CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */; };
 		33BF836D1CB9DCE500FFDAD5 /* button_listview1.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */; };
@@ -40,7 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3310E6891CB805370021B8FE /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = AppModel/File.swift; sourceTree = "<group>"; };
+		331073311CBB94EE004E11A7 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentController.swift; path = Controllers/ContentController.swift; sourceTree = "<group>"; };
+		3310E6891CB805370021B8FE /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItem.swift; path = AppModel/DataItem.swift; sourceTree = "<group>"; };
 		333795521CB7B19B002444F0 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		3352B7C51CB95599003F3C34 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = Images/back_button.png; sourceTree = "<group>"; };
 		3352B7C61CB95599003F3C34 /* main_menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_bg.png; path = Images/main_menu_bg.png; sourceTree = "<group>"; };
@@ -63,6 +72,13 @@
 		335BF6BF1CB69CEB00EE1177 /* ListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListView.xib; path = ViewControllers/ListView/ListView.xib; sourceTree = "<group>"; };
 		336CE3C61CBB441F000380A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Utils/ViewUtils.swift; sourceTree = "<group>"; };
+		336CE3CD1CBB5098000380A4 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = ViewControllers/Lesson/Lesson.swift; sourceTree = "<group>"; };
+		336CE3CE1CBB5098000380A4 /* Lesson.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Lesson.xib; path = ViewControllers/Lesson/Lesson.xib; sourceTree = "<group>"; };
+		336CE3D31CBB521D000380A4 /* quiz_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = quiz_background.png; path = Images/quiz_background.png; sourceTree = "<group>"; };
+		336CE3D51CBB54BD000380A4 /* LessonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonViewCell.swift; path = ViewControllers/Lesson/LessonViewCell.swift; sourceTree = "<group>"; };
+		336CE3D61CBB54BD000380A4 /* LessonViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LessonViewCell.xib; path = ViewControllers/Lesson/LessonViewCell.xib; sourceTree = "<group>"; };
+		336CE3D91CBB5584000380A4 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = AppModel/Question.swift; sourceTree = "<group>"; };
+		336CE3DB1CBB56A1000380A4 /* TestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestContent.swift; path = AppModel/TestContent.swift; sourceTree = "<group>"; };
 		33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItemUITableViewCell.swift; path = ViewControllers/ListView/DataItemUITableViewCell.swift; sourceTree = "<group>"; };
 		33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataItemUITableViewCell.xib; path = ViewControllers/ListView/DataItemUITableViewCell.xib; sourceTree = "<group>"; };
 		33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_listview1.png; path = Images/button_listview1.png; sourceTree = "<group>"; };
@@ -88,7 +104,9 @@
 		3310E6881CB805180021B8FE /* AppModel */ = {
 			isa = PBXGroup;
 			children = (
-				3310E6891CB805370021B8FE /* File.swift */,
+				3310E6891CB805370021B8FE /* DataItem.swift */,
+				336CE3D91CBB5584000380A4 /* Question.swift */,
+				336CE3DB1CBB56A1000380A4 /* TestContent.swift */,
 			);
 			name = AppModel;
 			sourceTree = "<group>";
@@ -98,6 +116,7 @@
 			children = (
 				33C9CB9F1CBA983E004061EA /* AssertDataController.swift */,
 				33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */,
+				331073311CBB94EE004E11A7 /* ContentController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 		335BF68E1CB65C2B00EE1177 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				336CE3CC1CBB5058000380A4 /* Lesson */,
 				335BF6BD1CB69CA600EE1177 /* ListView */,
 				335BF68F1CB65C8F00EE1177 /* MainScreen */,
 			);
@@ -156,6 +176,7 @@
 		335BF6A41CB6675500EE1177 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				336CE3D31CBB521D000380A4 /* quiz_background.png */,
 				33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */,
 				33BF836C1CB9DCE500FFDAD5 /* button_listview2.png */,
 				3352B7DF1CB955BB003F3C34 /* listview_background.png */,
@@ -201,6 +222,17 @@
 				336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		336CE3CC1CBB5058000380A4 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				336CE3CD1CBB5098000380A4 /* Lesson.swift */,
+				336CE3CE1CBB5098000380A4 /* Lesson.xib */,
+				336CE3D51CBB54BD000380A4 /* LessonViewCell.swift */,
+				336CE3D61CBB54BD000380A4 /* LessonViewCell.xib */,
+			);
+			name = Lesson;
 			sourceTree = "<group>";
 		};
 		33C9CBA51CBA98A6004061EA /* AppDelegate */ = {
@@ -281,6 +313,8 @@
 				336CE3C71CBB441F000380A4 /* LaunchScreen.storyboard in Resources */,
 				3352B7D71CB95599003F3C34 /* main_menu_grammar_icon.png in Resources */,
 				3352B7D41CB95599003F3C34 /* main_menu_examination_button.png in Resources */,
+				336CE3D81CBB54BD000380A4 /* LessonViewCell.xib in Resources */,
+				336CE3D01CBB5098000380A4 /* Lesson.xib in Resources */,
 				333795531CB7B19C002444F0 /* assets in Resources */,
 				3352B7DB1CB95599003F3C34 /* main_menu_ranking_button.png in Resources */,
 				33B5CDD91CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib in Resources */,
@@ -290,6 +324,7 @@
 				335BF6811CB657D600EE1177 /* Assets.xcassets in Resources */,
 				3352B7D21CB95599003F3C34 /* back_button.png in Resources */,
 				3352B7E01CB955BB003F3C34 /* listview_background.png in Resources */,
+				336CE3D41CBB521D000380A4 /* quiz_background.png in Resources */,
 				3352B7DD1CB95599003F3C34 /* main_menu_study_offline_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,13 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336CE3CF1CBB5098000380A4 /* Lesson.swift in Sources */,
 				33C9CBA91CBA9E57004061EA /* HttpDownloader.swift in Sources */,
+				336CE3D71CBB54BD000380A4 /* LessonViewCell.swift in Sources */,
+				331073321CBB94EE004E11A7 /* ContentController.swift in Sources */,
+				336CE3DC1CBB56A1000380A4 /* TestContent.swift in Sources */,
 				335BF6C01CB69CEB00EE1177 /* ListView.swift in Sources */,
 				33C9CBA31CBA9877004061EA /* MainScreen.swift in Sources */,
-				3310E68A1CB805370021B8FE /* File.swift in Sources */,
+				3310E68A1CB805370021B8FE /* DataItem.swift in Sources */,
 				33C9CBA01CBA983E004061EA /* AssertDataController.swift in Sources */,
 				33C9CBA71CBA98B3004061EA /* AppDelegate.swift in Sources */,
 				336CE3CB1CBB4E40000380A4 /* ViewUtils.swift in Sources */,
+				336CE3DA1CBB5584000380A4 /* Question.swift in Sources */,
 				33B5CDD81CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,7 @@ class AssertDataController: NSObject {
         do{
             let nsData = text.dataUsingEncoding(NSUTF8StringEncoding)
             let json: NSDictionary = try (NSJSONSerialization.JSONObjectWithData(nsData!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary)!
-        return DataItem(json: json)
+            return DataItem(json: json)
             
         }catch{
             return DataItem()

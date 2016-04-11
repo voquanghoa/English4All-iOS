@@ -23,14 +23,18 @@ class MainScreen: UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
 
-    func showLoadingDialog() {        
+    @IBAction func onExercise(sender: AnyObject) {
+
+
+    }
+    func showLoadingDialog() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.presentViewController(alertController, animated: false, completion: nil)
     }
     
     func showListView(dataItem: DataItem!){
         if(dataItem != nil){
-            self.navigationController?.pushViewController(ListView(dataItem: dataItem), animated: true)
+            self.navigationController?.pushViewController(ListView(dataItem: dataItem, parentPath: ""), animated: true)
         }
     }
     
@@ -73,12 +77,11 @@ class MainScreen: UIViewController {
     }
 
     @IBAction func onOfflineClicked(sender: AnyObject) {
-        self.navigationController?.pushViewController(ListView(dataItem: AssertDataController.sharedInstance.assetData), animated: true)
+        self.showListView(AssertDataController.sharedInstance.assetData)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        rearrangeGraphics()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -102,7 +105,7 @@ class MainScreen: UIViewController {
         
         let topMargin = viewHeight * 70.0 / 900
         let bannerHeight = CGFloat(80)
-        let spacingPercent = 15 //%
+        let spacingPercent = 15
 
         var topItem = self.imgTitle.bounds.origin.y + self.imgTitle.bounds.height + topMargin
         let midleLayoutHeight = viewHeight - topItem - bannerHeight

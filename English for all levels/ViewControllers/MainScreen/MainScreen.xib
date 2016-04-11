@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreen" customModule="English_for_all_levels" customModuleProvider="target">
@@ -27,54 +26,66 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="gvO-it-qvR">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_bg.png" id="gvO-it-qvR">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="47d-df-zOg">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_header.png" id="47d-df-zOg">
                     <rect key="frame" x="8" y="30" width="398" height="116"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="47d-df-zOg" secondAttribute="height" multiplier="414:121" id="SUv-mK-tLD"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_menu_grammar_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-zN-jMy">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_grammar_icon.png" id="NwK-zN-jMy">
                     <rect key="frame" x="8" y="147" width="70" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_menu_examination_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="atu-vS-Hov">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_examination_icon.png" id="atu-vS-Hov">
                     <rect key="frame" x="336" y="234" width="70" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_menu_study_offline_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-hu-WYG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_study_offline_icon.png" id="UYD-hu-WYG">
                     <rect key="frame" x="19" y="310" width="70" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_menu_listen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-04-eqw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_listen_icon.png" id="xCl-04-eqw">
                     <rect key="frame" x="336" y="404" width="70" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nam-1c-2gY">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nam-1c-2gY">
                     <rect key="frame" x="19" y="234" width="328" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_examination_button.png"/>
                     <connections>
                         <action selector="onExaminationClicked:" destination="-1" eventType="touchUpInside" id="O6Z-yb-bFT"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-rW-h40">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3lL-rW-h40">
                     <rect key="frame" x="19" y="404" width="328" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_listen_button.png"/>
+                    <connections>
+                        <action selector="onExercise:" destination="-1" eventType="touchUpInside" id="NCF-Pq-oEa"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdI-4o-vNX">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BdI-4o-vNX">
                     <rect key="frame" x="86" y="480" width="328" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_ranking_button.png"/>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_menu_ranking_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-UL-e7h">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_ranking_icon.png" id="fZI-UL-e7h">
                     <rect key="frame" x="19" y="474" width="70" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjj-92-kcL">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kjj-92-kcL">
                     <rect key="frame" x="86" y="147" width="328" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_grammar_button.png"/>
                     <connections>
                         <action selector="onGrammarClicked:" destination="-1" eventType="touchUpInside" id="jZ3-jz-l6G"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-fB-UMh">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uUt-fB-UMh">
                     <rect key="frame" x="8" y="323" width="328" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_study_offline_button.png"/>
                     <connections>
                         <action selector="onOfflineClicked:" destination="-1" eventType="touchUpInside" id="HLi-nw-vyd"/>
@@ -82,15 +93,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="gvO-it-qvR" secondAttribute="bottom" id="0Pg-58-cFi"/>
-                <constraint firstItem="gvO-it-qvR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ie3-py-IuT"/>
-                <constraint firstAttribute="trailing" secondItem="gvO-it-qvR" secondAttribute="trailing" id="U5Z-he-u4a"/>
-                <constraint firstItem="47d-df-zOg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fjX-39-8bs"/>
-                <constraint firstItem="gvO-it-qvR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hgO-rj-7bU"/>
-                <constraint firstItem="47d-df-zOg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="iCA-Wc-nKl"/>
-                <constraint firstAttribute="trailing" secondItem="47d-df-zOg" secondAttribute="trailing" constant="8" id="lyO-LG-Bnx"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <point key="canvasLocation" x="449" y="82"/>
         </view>
