@@ -9,36 +9,23 @@
 import UIKit
 
 class MainScreen: UIViewController {
-    let activitiyViewController = ActivityViewController(message: "Loading...")
     @IBOutlet var icons: [UIImageView]!
     
     @IBOutlet var buttons: [UIButton]!
     
     @IBOutlet weak var imgTitle: UIImageView!
     
+    var alertController: UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        alertController = ViewUtils.createDownloadingDialog()
         self.navigationController?.navigationBarHidden = true
     }
 
-    func showLoadingDialog() {
+    func showLoadingDialog() {        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let spinnerIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-        
-        spinnerIndicator.center = CGPointMake(135.0, 65.5)
-        spinnerIndicator.color = UIColor.blackColor()
-        spinnerIndicator.startAnimating()
-        
-        alertController.view.addSubview(spinnerIndicator)
         self.presentViewController(alertController, animated: false, completion: nil)
-    }
-    
-    func hideLoadingDialog(){
-        dispatch_async(dispatch_get_main_queue(), {
-            
-        })
     }
     
     func showListView(dataItem: DataItem!){
@@ -69,21 +56,20 @@ class MainScreen: UIViewController {
     
     @IBAction func onExaminationClicked(sender: AnyObject) {
         if(AssertDataController.sharedInstance.examination != nil){
-            self.navigationController?.pushViewController(ListView(dataItem: AssertDataController.sharedInstance.examination), animated: true)
+            showListView(AssertDataController.sharedInstance.examination)
         }else{
             showLoadingDialog()
-            HttpDownloader.load("http://doanit.com/appdata/english4all/examination/data.json", completion: onDownloadDone)
+            HttpDownloader.load("examination/data.json", completion: onDownloadDone)
         }
     }
     
     @IBAction func onGrammarClicked(sender: AnyObject) {
         if(AssertDataController.sharedInstance.grammarData != nil){
-            self.navigationController?.pushViewController(ListView(dataItem: AssertDataController.sharedInstance.grammarData), animated: true)
+            showListView(AssertDataController.sharedInstance.grammarData)
         }else{
             showLoadingDialog()
-            HttpDownloader.load("http://doanit.com/appdata/english4all/grammar/data.json", completion: onDownloadDone)
+            HttpDownloader.load("grammar/data.json", completion: onDownloadDone)
         }
-
     }
 
     @IBAction func onOfflineClicked(sender: AnyObject) {
@@ -130,7 +116,7 @@ class MainScreen: UIViewController {
         
         let iconRight =  commonRight - iconSize
         
-        for i in 0...4 {
+        for i in 0..<buttons.count {
             if (i % 2 == 0){
                 icons[i].frame = CGRectMake(commonLeft, topItem, iconSize, iconSize)
                 buttons[i].frame = CGRectMake(commonRight - buttonWidth, topItem , buttonWidth, buttonHeight)

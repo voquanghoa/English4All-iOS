@@ -27,6 +27,7 @@
 		335BF6C01CB69CEB00EE1177 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BF6BE1CB69CEB00EE1177 /* ListView.swift */; };
 		335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335BF6BF1CB69CEB00EE1177 /* ListView.xib */; };
 		336CE3C71CBB441F000380A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336CE3C61CBB441F000380A4 /* LaunchScreen.storyboard */; };
+		336CE3CB1CBB4E40000380A4 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */; };
 		33B5CDD81CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */; };
 		33B5CDD91CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */; };
 		33BF836D1CB9DCE500FFDAD5 /* button_listview1.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */; };
@@ -61,6 +62,7 @@
 		335BF6BE1CB69CEB00EE1177 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = ViewControllers/ListView/ListView.swift; sourceTree = "<group>"; };
 		335BF6BF1CB69CEB00EE1177 /* ListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListView.xib; path = ViewControllers/ListView/ListView.xib; sourceTree = "<group>"; };
 		336CE3C61CBB441F000380A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Utils/ViewUtils.swift; sourceTree = "<group>"; };
 		33B5CDD61CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItemUITableViewCell.swift; path = ViewControllers/ListView/DataItemUITableViewCell.swift; sourceTree = "<group>"; };
 		33B5CDD71CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataItemUITableViewCell.xib; path = ViewControllers/ListView/DataItemUITableViewCell.xib; sourceTree = "<group>"; };
 		33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_listview1.png; path = Images/button_listview1.png; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		335BF6781CB657D500EE1177 /* English for all levels */ = {
 			isa = PBXGroup;
 			children = (
+				336CE3C91CBB4E23000380A4 /* Utils */,
 				336CE3C51CBB440F000380A4 /* LaunchScreen */,
 				33C9CBA51CBA98A6004061EA /* AppDelegate */,
 				3310E6881CB805180021B8FE /* AppModel */,
@@ -190,6 +193,14 @@
 				336CE3C61CBB441F000380A4 /* LaunchScreen.storyboard */,
 			);
 			name = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		336CE3C91CBB4E23000380A4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		33C9CBA51CBA98A6004061EA /* AppDelegate */ = {
@@ -296,6 +307,7 @@
 				3310E68A1CB805370021B8FE /* File.swift in Sources */,
 				33C9CBA01CBA983E004061EA /* AssertDataController.swift in Sources */,
 				33C9CBA71CBA98B3004061EA /* AppDelegate.swift in Sources */,
+				336CE3CB1CBB4E40000380A4 /* ViewUtils.swift in Sources */,
 				33B5CDD81CB8B6AE00A4FB79 /* DataItemUITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

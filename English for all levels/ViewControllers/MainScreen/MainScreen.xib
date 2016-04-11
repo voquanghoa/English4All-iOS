@@ -55,13 +55,6 @@
                         <action selector="onExaminationClicked:" destination="-1" eventType="touchUpInside" id="O6Z-yb-bFT"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-fB-UMh">
-                    <rect key="frame" x="86" y="310" width="328" height="68"/>
-                    <state key="normal" title="Button" image="main_menu_study_offline_button.png"/>
-                    <connections>
-                        <action selector="onOfflineClicked:" destination="-1" eventType="touchUpInside" id="HLi-nw-vyd"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-rW-h40">
                     <rect key="frame" x="19" y="404" width="328" height="68"/>
                     <state key="normal" title="Button" image="main_menu_listen_button.png"/>
@@ -78,6 +71,13 @@
                     <state key="normal" title="Button" image="main_menu_grammar_button.png"/>
                     <connections>
                         <action selector="onGrammarClicked:" destination="-1" eventType="touchUpInside" id="jZ3-jz-l6G"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-fB-UMh">
+                    <rect key="frame" x="8" y="323" width="328" height="68"/>
+                    <state key="normal" title="Button" image="main_menu_study_offline_button.png"/>
+                    <connections>
+                        <action selector="onOfflineClicked:" destination="-1" eventType="touchUpInside" id="HLi-nw-vyd"/>
                     </connections>
                 </button>
             </subviews>
