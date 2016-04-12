@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var ListItemView: UITableView!
     var dataItem:DataItem!
     var path: String!
@@ -63,14 +64,27 @@ class ListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func onDownloadDone(url:String, data:String, error:Bool){
+        self.hideDownloadIndicator({ () -> Void in
+                if(!error ){
+                    self.showTestContent(ContentController.decodeTestContent(data))
+                }else{
+                    self.showDownloadFailAlert()
+                }
+            }
+        )
+    }
+    
     func prepareShowTestContent(selectedItem: DataItem){
         let selectedPath = "\(path)/\(selectedItem.fileName)"
         
         if (selectedPath.containsString("/assets/")){
             let testContent = ContentController.loadTestContent(selectedPath)
             showTestContent(testContent)
+        }else{
+            self.showDownloadIndicator()
+            HttpDownloader.load(selectedPath, completion: onDownloadDone)
         }
-        
     }
     
     func showTestContent(testContent: TestContent){

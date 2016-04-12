@@ -12,7 +12,7 @@ class HttpDownloader: NSObject {
     static let serverDomain = "http://doanit.com/appdata/english4all"
     
     class func load(urlPath: String, completion:(url:String, data:String, error:Bool) -> Void) {
-            let url = NSURL(string: "\(serverDomain)/\(urlPath)")
+            let url = NSURL(string: "\(serverDomain)\(urlPath)")
         
             let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
             let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)

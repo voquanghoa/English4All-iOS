@@ -9,18 +9,27 @@
 import UIKit
 
 class ViewUtils: NSObject {
+    class func createAlert(message: String, title: String) -> UIAlertController{
+        return UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    }
+    
+    class func createNoticeAlert(message: String) -> UIAlertController{
+        let alert = ViewUtils.createAlert(message, title: "Notice")
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        return alert
+    }
     
     class func createDownloadingDialog()-> UIAlertController{
-        let createAlert = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: UIAlertControllerStyle.Alert)
-    
+        let createAlert = ViewUtils.createAlert("Please wait\n\n\n\n", title: "Downloading")
+        
         let spinnerIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-    
-        spinnerIndicator.center = CGPointMake(135.0, 65.5)
+        
+        spinnerIndicator.center = CGPointMake(135.0, 85.5)
         spinnerIndicator.color = UIColor.blackColor()
         spinnerIndicator.startAnimating()
-    
+        
         createAlert.view.addSubview(spinnerIndicator)
-    
+        
         return createAlert
     }
     

@@ -8,28 +8,21 @@
 
 import UIKit
 
-class MainScreen: UIViewController {
+class MainScreen: DownloadViewController {
     @IBOutlet var icons: [UIImageView]!
     
     @IBOutlet var buttons: [UIButton]!
     
     @IBOutlet weak var imgTitle: UIImageView!
     
-    var alertController: UIAlertController!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        alertController = ViewUtils.createDownloadingDialog()
         self.navigationController?.navigationBarHidden = true
     }
 
     @IBAction func onExercise(sender: AnyObject) {
 
 
-    }
-    func showLoadingDialog() {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.presentViewController(alertController, animated: false, completion: nil)
     }
     
     func showListView(dataItem: DataItem!){
@@ -48,22 +41,22 @@ class MainScreen: UIViewController {
                 AssertDataController.sharedInstance.loadExaminaton(data)
                 dataItem = AssertDataController.sharedInstance.examination
             }
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            self.dismissViewControllerAnimated(false, completion: { () -> Void in
-                    self.showListView(dataItem)
+            self.hideDownloadIndicator({ () -> Void in
+                self.showListView(dataItem)
             })
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        })
+        }else{
+            self.hideDownloadIndicator({ () -> Void in
+                self.showDownloadFailAlert()
+            })
+        }
     }
     
     @IBAction func onExaminationClicked(sender: AnyObject) {
         if(AssertDataController.sharedInstance.examination != nil){
             showListView(AssertDataController.sharedInstance.examination)
         }else{
-            showLoadingDialog()
-            HttpDownloader.load("examination/data.json", completion: onDownloadDone)
+            showDownloadIndicator()
+            HttpDownloader.load("/examination/data.json", completion: onDownloadDone)
         }
     }
     
@@ -71,8 +64,8 @@ class MainScreen: UIViewController {
         if(AssertDataController.sharedInstance.grammarData != nil){
             showListView(AssertDataController.sharedInstance.grammarData)
         }else{
-            showLoadingDialog()
-            HttpDownloader.load("grammar/data.json", completion: onDownloadDone)
+            showDownloadIndicator()
+            HttpDownloader.load("/grammar/data.json", completion: onDownloadDone)
         }
     }
 
