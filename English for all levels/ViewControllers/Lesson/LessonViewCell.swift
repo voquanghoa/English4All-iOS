@@ -17,15 +17,15 @@ class LessonViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        questionTitle.backgroundColor = UIColor.clearColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setQuestion(question: Question){
-        questionTitle.text = question.questionTitle
+    func setQuestion(index: Int, question: Question){
+        questionTitle.attributedText = createHtmlAttrib("\(index). \(question.questionTitle)")
         
         var height = ViewUtils.getViewContentHeight(questionTitle)
         
@@ -39,14 +39,22 @@ class LessonViewCell: UITableViewCell {
                 button.hidden = true
             }else{
                 button.hidden = false
-                button.setTitle(question.anwers[index - (answerTexts.count - answerCount)], forState: .Normal)
+                button.setAttributedTitle(createHtmlAttrib(question.anwers[index - (answerTexts.count - answerCount)]), forState: .Normal)
                 height = height + button.frame.origin.y + 27
             }
         }
         height = height + 200
         contentHeight = height
+    }
+    
+    func createHtmlAttrib(html: String) -> NSAttributedString{
+        let sizeHtml = "<font size='5'>\(html)</font>"
         
-
+        let attrStr = try! NSAttributedString(
+            data: sizeHtml.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        return attrStr
     }
     
     func updateSize(){
