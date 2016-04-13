@@ -10,6 +10,7 @@ import UIKit
 
 class LessonViewCell: UITableViewCell {
 
+    @IBOutlet weak var category: UIButton!
     @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet var answerTexts: [UIButton]!
     var contentHeight:CGFloat = 0
@@ -24,6 +25,14 @@ class LessonViewCell: UITableViewCell {
     }
     
     func setQuestion(index: Int, question: Question){
+        
+        if(question.category == ""){
+            category.hidden = true
+        }else{
+            category.hidden = false
+            category.setTitle(question.category, forState: .Normal)
+        }
+        
         questionTitle.attributedText = createHtmlAttrib("\(index + 1). \(question.questionTitle)")
         
         let answerCount = question.anwers.count
