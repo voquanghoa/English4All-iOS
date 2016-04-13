@@ -13,7 +13,8 @@ class LessonViewCell: UITableViewCell {
     @IBOutlet weak var category: UIButton!
     @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet var answerTexts: [UIButton]!
-    var contentHeight:CGFloat = 0
+    
+    var question: Question!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +25,20 @@ class LessonViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func onAnswerClick(sender: AnyObject) {
+        let clickedButton = sender as! NSObject
+        
+        for index in 0..<answerTexts.count{
+            answerTexts[index].selected = answerTexts[index] == clickedButton
+            
+            if(answerTexts[index].selected){
+                question.userSelected = index
+            }
+        }
+    }
+    
     func setQuestion(index: Int, question: Question){
+        self.question = question
         
         if(question.category == ""){
             category.hidden = true
@@ -42,8 +56,17 @@ class LessonViewCell: UITableViewCell {
             if(index < answerTexts.count - answerCount){
                 button.hidden = true
             }else{
+                let questionIndex = index - (answerTexts.count - answerCount)
+                let u = UnicodeScalar(97 + questionIndex)
+                let answer = "\(Character(u)). \(question.anwers[questionIndex])"
+                
                 button.hidden = false
-                button.setAttributedTitle(createHtmlAttrib(question.anwers[index - (answerTexts.count - answerCount)]), forState: .Normal)
+                button.setAttributedTitle(createHtmlAttrib(answer), forState: .Normal)
+                if(questionIndex == question.userSelected){
+                    button.selected = true
+                }else{
+                    button.selected = false
+                }
             }
         }
     }
@@ -56,19 +79,5 @@ class LessonViewCell: UITableViewCell {
             options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
             documentAttributes: nil)
         return attrStr
-    }
-    
-    func updateSize(){
-        var frame = self.frame
-        frame.size = CGSize(width: frame.size.width, height: contentHeight)
-        self.frame = frame
-    }
-    
-    override func willMoveToWindow(newWindow: UIWindow?) {
-        updateSize()
-    }
-    
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        updateSize()
     }
 }

@@ -12,6 +12,7 @@ class Question: NSObject {
     var questionTitle: String = ""
     
     var correctAnswer: Int = -1
+    var userSelected: Int = -1
     var category: String = ""
     
     var anwers: [String] = []

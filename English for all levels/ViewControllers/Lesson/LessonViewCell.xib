@@ -32,19 +32,35 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJo-jp-DA3">
                                 <rect key="frame" x="0.0" y="50" width="359" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4SK-hi-jEp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Yy-vRd">
                                 <rect key="frame" x="0.0" y="80" width="359" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z7l-Zp-GqB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87M-vj-0je">
                                 <rect key="frame" x="0.0" y="110" width="359" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OTT-tS-9p3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypQ-wX-3qK">
                                 <rect key="frame" x="0.0" y="140" width="359" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xHW-S8-pUk"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
