@@ -10,8 +10,7 @@ import UIKit
 
 class LessonViewCell: UITableViewCell {
 
-    @IBOutlet weak var questionTitle: UITextView!
-
+    @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet var answerTexts: [UIButton]!
     var contentHeight:CGFloat = 0
     
@@ -25,11 +24,7 @@ class LessonViewCell: UITableViewCell {
     }
     
     func setQuestion(index: Int, question: Question){
-        questionTitle.attributedText = createHtmlAttrib("\(index). \(question.questionTitle)")
-        
-        var height = ViewUtils.getViewContentHeight(questionTitle)
-        
-        height = height + questionTitle.frame.origin.y + 5
+        questionTitle.attributedText = createHtmlAttrib("\(index + 1). \(question.questionTitle)")
         
         let answerCount = question.anwers.count
         for index in 0..<answerTexts.count{
@@ -40,11 +35,8 @@ class LessonViewCell: UITableViewCell {
             }else{
                 button.hidden = false
                 button.setAttributedTitle(createHtmlAttrib(question.anwers[index - (answerTexts.count - answerCount)]), forState: .Normal)
-                height = height + button.frame.origin.y + 27
             }
         }
-        height = height + 200
-        contentHeight = height
     }
     
     func createHtmlAttrib(html: String) -> NSAttributedString{
