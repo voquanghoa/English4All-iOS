@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var questionList: UITableView!
+    
     var testContent: TestContent!
     
     convenience init(testContent: TestContent){
@@ -27,6 +30,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.questionList.dataSource = self
         self.questionList.delegate = self
         self.questionList.backgroundColor = UIColor.clearColor()
+        GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
 
     }
     

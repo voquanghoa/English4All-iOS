@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
-        
+        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+            
         return true
     }
 

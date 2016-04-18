@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var ListItemView: UITableView!
     var dataItem:DataItem!
     var path: String!
@@ -32,6 +34,7 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
         self.ListItemView.registerNib(UINib(nibName: "DataItemUITableViewCell", bundle: nil), forCellReuseIdentifier: "DataItemUITableViewCell")
         self.ListItemView.dataSource = self
         self.ListItemView.delegate = self
+        GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
     }
     
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {

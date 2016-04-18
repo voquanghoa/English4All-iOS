@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class MainScreen: DownloadViewController {
     @IBOutlet var icons: [UIImageView]!
-    
     @IBOutlet var buttons: [UIButton]!
-    
     @IBOutlet weak var imgTitle: UIImageView!
-    
+
+    @IBOutlet weak var bannerView: GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
+        GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
     }
 
     @IBAction func onExercise(sender: AnyObject) {
