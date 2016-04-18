@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		331073321CBB94EE004E11A7 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331073311CBB94EE004E11A7 /* ContentController.swift */; };
 		3310E68A1CB805370021B8FE /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310E6891CB805370021B8FE /* DataItem.swift */; };
+		3333190D1CC4A065002F89C7 /* question_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3333190C1CC4A065002F89C7 /* question_normal.png */; };
 		333795531CB7B19C002444F0 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 333795521CB7B19B002444F0 /* assets */; };
+		333FA87A1CC48D8200B05A4C /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 333FA8791CC48D8200B05A4C /* DLRadioButton.m */; };
 		3352B7D21CB95599003F3C34 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C51CB95599003F3C34 /* back_button.png */; };
 		3352B7D31CB95599003F3C34 /* main_menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C61CB95599003F3C34 /* main_menu_bg.png */; };
 		3352B7D41CB95599003F3C34 /* main_menu_examination_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C71CB95599003F3C34 /* main_menu_examination_button.png */; };
@@ -51,7 +53,11 @@
 /* Begin PBXFileReference section */
 		331073311CBB94EE004E11A7 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentController.swift; path = Controllers/ContentController.swift; sourceTree = "<group>"; };
 		3310E6891CB805370021B8FE /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItem.swift; path = AppModel/DataItem.swift; sourceTree = "<group>"; };
+		3333190C1CC4A065002F89C7 /* question_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = question_normal.png; path = Images/question_normal.png; sourceTree = "<group>"; };
 		333795521CB7B19B002444F0 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		333FA8771CC48D8100B05A4C /* English for all levels-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "English for all levels-Bridging-Header.h"; sourceTree = "<group>"; };
+		333FA8781CC48D8200B05A4C /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = Control/DLRadioButton.h; sourceTree = "<group>"; };
+		333FA8791CC48D8200B05A4C /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = Control/DLRadioButton.m; sourceTree = "<group>"; };
 		3352B7C51CB95599003F3C34 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = Images/back_button.png; sourceTree = "<group>"; };
 		3352B7C61CB95599003F3C34 /* main_menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_bg.png; path = Images/main_menu_bg.png; sourceTree = "<group>"; };
 		3352B7C71CB95599003F3C34 /* main_menu_examination_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_examination_button.png; path = Images/main_menu_examination_button.png; sourceTree = "<group>"; };
@@ -113,6 +119,16 @@
 			name = AppModel;
 			sourceTree = "<group>";
 		};
+		333FA86F1CC48B7200B05A4C /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				333FA8781CC48D8200B05A4C /* DLRadioButton.h */,
+				333FA8791CC48D8200B05A4C /* DLRadioButton.m */,
+				333FA8771CC48D8100B05A4C /* English for all levels-Bridging-Header.h */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
 		335AEFF81CBD5A9D00849B89 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +166,7 @@
 		335BF6781CB657D500EE1177 /* English for all levels */ = {
 			isa = PBXGroup;
 			children = (
+				333FA86F1CC48B7200B05A4C /* Control */,
 				336CE3C91CBB4E23000380A4 /* Utils */,
 				336CE3C51CBB440F000380A4 /* LaunchScreen */,
 				33C9CBA51CBA98A6004061EA /* AppDelegate */,
@@ -187,6 +204,7 @@
 		335BF6A41CB6675500EE1177 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3333190C1CC4A065002F89C7 /* question_normal.png */,
 				336CE3D31CBB521D000380A4 /* quiz_background.png */,
 				33BF836B1CB9DCE500FFDAD5 /* button_listview1.png */,
 				33BF836C1CB9DCE500FFDAD5 /* button_listview2.png */,
@@ -314,6 +332,7 @@
 			files = (
 				3352B7DE1CB95599003F3C34 /* main_menu_study_offline_icon.png in Resources */,
 				3352B7D81CB95599003F3C34 /* main_menu_header.png in Resources */,
+				3333190D1CC4A065002F89C7 /* question_normal.png in Resources */,
 				335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */,
 				3352B7D91CB95599003F3C34 /* main_menu_listen_button.png in Resources */,
 				33BF836D1CB9DCE500FFDAD5 /* button_listview1.png in Resources */,
@@ -348,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				336CE3CF1CBB5098000380A4 /* Lesson.swift in Sources */,
+				333FA87A1CC48D8200B05A4C /* DLRadioButton.m in Sources */,
 				33C9CBA91CBA9E57004061EA /* HttpDownloader.swift in Sources */,
 				336CE3D71CBB54BD000380A4 /* LessonViewCell.swift in Sources */,
 				331073321CBB94EE004E11A7 /* ContentController.swift in Sources */,
@@ -454,10 +474,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "English for all levels/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "quanghoa.English-for-all-levels";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "English for all levels/English for all levels-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -465,10 +488,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "English for all levels/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "quanghoa.English-for-all-levels";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "English for all levels/English for all levels-Bridging-Header.h";
 			};
 			name = Release;
 		};

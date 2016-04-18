@@ -22,7 +22,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         self.questionList.registerNib(UINib(nibName: "LessonViewCell", bundle: nil), forCellReuseIdentifier: "LessonViewCell")
         
-        self.questionList.estimatedRowHeight = 200
+        self.questionList.estimatedRowHeight = 10
         self.questionList.rowHeight = UITableViewAutomaticDimension
         self.questionList.dataSource = self
         self.questionList.delegate = self

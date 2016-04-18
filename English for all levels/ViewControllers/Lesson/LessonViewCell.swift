@@ -10,6 +10,7 @@ import UIKit
 
 class LessonViewCell: UITableViewCell {
 
+    @IBOutlet weak var stackQuestion: UIStackView!
     @IBOutlet weak var category: UIButton!
     @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet var answerTexts: [UIButton]!
@@ -18,7 +19,7 @@ class LessonViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        questionTitle.backgroundColor = UIColor.clearColor()
+        stackQuestion.backgroundColor = UIColor(patternImage: UIImage(named: "question_normal.png")!)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

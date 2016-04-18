@@ -10,6 +10,7 @@ import UIKit
 
 class DataItemUITableViewCell: UITableViewCell {
 
+    @IBOutlet weak var badge: UILabel!
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var folderBackground: UIImageView!

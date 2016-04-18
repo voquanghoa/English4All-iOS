@@ -29,9 +29,17 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BnY-E0-Ymi">
+                        <rect key="frame" x="273" y="3" width="44" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="badge" destination="BnY-E0-Ymi" id="tKw-Kh-jyt"/>
                 <outlet property="fileBackground" destination="RXL-sV-zhH" id="F9H-vQ-rgX"/>
                 <outlet property="folderBackground" destination="TaY-fH-eRS" id="iPI-dw-lVJ"/>
                 <outlet property="label" destination="uQY-qN-AZb" id="vU5-8K-yr4"/>
