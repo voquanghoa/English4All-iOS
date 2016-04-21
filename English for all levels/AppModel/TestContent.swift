@@ -20,4 +20,15 @@ class TestContent : NSObject{
     override init() {
         
     }
+    
+    func convertToReadable() -> TestContent{
+        var questions: [Question] = []
+        for question in self.questions {
+            questions += question.extend()
+        }
+        
+        let testContent = TestContent()
+        testContent.questions = questions
+        return testContent
+    }
 }

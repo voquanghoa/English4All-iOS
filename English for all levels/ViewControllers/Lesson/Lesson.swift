@@ -20,18 +20,22 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate, GADI
     
     convenience init(testContent: TestContent){
         self.init()
-        self.testContent = testContent
+        self.testContent = testContent.convertToReadable()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.questionList.registerNib(UINib(nibName: "LessonViewCell", bundle: nil), forCellReuseIdentifier: "LessonViewCell")
+        self.questionList.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "QuestionCell")
+        self.questionList.registerNib(UINib(nibName: "CategoryCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
         
         self.questionList.estimatedRowHeight = 10
         self.questionList.rowHeight = UITableViewAutomaticDimension
         self.questionList.dataSource = self
         self.questionList.delegate = self
         self.questionList.backgroundColor = UIColor.clearColor()
+        
+        
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
@@ -60,12 +64,33 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate, GADI
     }
     
     @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell?
         
-        let cell = questionList.dequeueReusableCellWithIdentifier("LessonViewCell", forIndexPath: indexPath) as! LessonViewCell
-        let question = self.testContent.questions[indexPath.row]
-        cell.setQuestion(indexPath.row, question: question)
-        cell.backgroundColor = UIColor.clearColor()
-        return cell
+        let dataItem = testContent.questions[indexPath.row]
+        
+        if dataItem.category != ""{
+            cell = questionList.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath)
+            (cell as! CategoryCell).label.text = dataItem.category
+        }else if dataItem.anwers.count == 0 {
+            cell = questionList.dequeueReusableCellWithIdentifier("QuestionCell", forIndexPath: indexPath)
+            (cell as! QuestionCell).setText(convertIndex(indexPath.row),text: dataItem.questionTitle)
+        }else{
+            cell = questionList.dequeueReusableCellWithIdentifier("LessonViewCell", forIndexPath: indexPath)
+            (cell as! LessonViewCell).setQuestion(indexPath.row, question: dataItem)
+            cell!.backgroundColor = UIColor.clearColor()
+        }
+        
+        return cell!
+    }
+    
+    func convertIndex(index: Int) -> Int{
+        var categorySkip = 0
+        for i in 0...index{
+            if testContent.questions[i].category != "" {
+                categorySkip = categorySkip + 1
+            }
+        }
+        return (index - categorySkip)/2
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){

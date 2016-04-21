@@ -31,4 +31,24 @@ class Question: NSObject {
         
         self.anwers = (json["anwers"] as? [String])!
     }
+    
+    func extend() -> [Question]{
+        var questions: [Question] = []
+        
+        if self.category != "" {
+            let q1 = Question()
+            q1.category = self.category
+            questions += [q1]
+        }
+        
+        let q2 = Question()
+        q2.questionTitle = self.questionTitle
+        
+        let q3 = Question()
+        q3.anwers = self.anwers
+        
+        questions += [q2, q3]
+        
+        return questions
+    }
 }

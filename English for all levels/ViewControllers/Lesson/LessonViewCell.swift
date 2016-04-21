@@ -9,18 +9,10 @@
 import UIKit
 
 class LessonViewCell: UITableViewCell {
-
-    @IBOutlet weak var stackQuestion: UIStackView!
-    @IBOutlet weak var category: UIButton!
-    @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet var answerTexts: [UIButton]!
     
     var question: Question!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        stackQuestion.backgroundColor = UIColor(patternImage: UIImage(named: "question_normal.png")!)
-    }
+    static var custombackground:UIColor!
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -41,15 +33,6 @@ class LessonViewCell: UITableViewCell {
     func setQuestion(index: Int, question: Question){
         self.question = question
         
-        if(question.category == ""){
-            category.hidden = true
-        }else{
-            category.hidden = false
-            category.setTitle(question.category, forState: .Normal)
-        }
-        
-        questionTitle.attributedText = createHtmlAttrib("\(index + 1). \(question.questionTitle)")
-        
         let answerCount = question.anwers.count
         for index in 0..<answerTexts.count{
             let button = answerTexts[index]
@@ -62,23 +45,13 @@ class LessonViewCell: UITableViewCell {
                 let answer = "\(Character(u)). \(question.anwers[questionIndex])"
                 
                 button.hidden = false
-                button.setAttributedTitle(createHtmlAttrib(answer), forState: .Normal)
-                if(questionIndex == question.userSelected){
-                    button.selected = true
-                }else{
+                button.setAttributedTitle(QuestionHelper.createHtmlAttrib(answer), forState: .Normal)
+                button.selected = true
+                
+                if(questionIndex != question.userSelected){
                     button.selected = false
                 }
             }
         }
-    }
-    
-    func createHtmlAttrib(html: String) -> NSAttributedString{
-        let sizeHtml = "<font size='5'>\(html)</font>"
-        
-        let attrStr = try! NSAttributedString(
-            data: sizeHtml.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-            documentAttributes: nil)
-        return attrStr
     }
 }

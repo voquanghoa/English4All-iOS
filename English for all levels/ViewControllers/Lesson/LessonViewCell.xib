@@ -7,99 +7,78 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="175" id="KGk-i7-Jjw" customClass="LessonViewCell" customModule="English_for_all_levels" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="396" height="175"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="LessonViewCell" customModule="English_for_all_levels" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="92"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="396" height="174.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="376" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7QY-Vm-RCF">
-                        <rect key="frame" x="8" y="8" width="380" height="159"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vqm-1i-usN">
+                        <rect key="frame" x="5" y="5" width="366" height="82"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5R-V5-XZJ">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="51"/>
-                                <color key="backgroundColor" red="0.65042994970000001" green="0.3125" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.65042994970000001" green="0.3125" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fJo-jp-DA3" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="0.0" width="366" height="21"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4SK-hi-jEp"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-ZY-ost">
-                                <rect key="frame" x="0.0" y="51" width="380" height="109"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIL-X0-23D">
-                                        <rect key="frame" x="0.0" y="0.0" width="380" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fJo-jp-DA3" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="21" width="380" height="22"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4SK-hi-jEp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Yy-vRd" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="43" width="380" height="22"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z7l-Zp-GqB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87M-vj-0je" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="65" width="380" height="22"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OTT-tS-9p3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypQ-wX-3qK" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="87" width="380" height="22"/>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xHW-S8-pUk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Yy-vRd" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="21" width="366" height="21"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z7l-Zp-GqB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87M-vj-0je" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="41" width="366" height="21"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OTT-tS-9p3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypQ-wX-3qK" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="62" width="366" height="21"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAnswerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xHW-S8-pUk"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" red="0.85474042357764823" green="1" blue="0.96620461649009692" alpha="0.94278017241379308" colorSpace="calibratedRGB"/>
                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="height" secondItem="7QY-Vm-RCF" secondAttribute="height" constant="16" id="75R-rx-l9B"/>
-                    <constraint firstItem="7QY-Vm-RCF" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-16" id="agb-mH-6Ud"/>
+                    <constraint firstAttribute="height" secondItem="Vqm-1i-usN" secondAttribute="height" constant="10" id="R6s-12-5qM"/>
+                    <constraint firstItem="Vqm-1i-usN" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-10" id="U9k-EF-ARI"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="category" destination="e5R-V5-XZJ" id="bT5-ly-YbS"/>
-                <outlet property="questionTitle" destination="bIL-X0-23D" id="nhh-pS-4x4"/>
-                <outlet property="stackQuestion" destination="iKM-ZY-ost" id="AkA-iR-z8W"/>
                 <outletCollection property="answerTexts" destination="fJo-jp-DA3" collectionClass="NSMutableArray" id="hE2-Ao-IC0"/>
                 <outletCollection property="answerTexts" destination="wB1-Yy-vRd" collectionClass="NSMutableArray" id="7ii-M6-4i7"/>
                 <outletCollection property="answerTexts" destination="87M-vj-0je" collectionClass="NSMutableArray" id="7B1-TN-eM4"/>
                 <outletCollection property="answerTexts" destination="ypQ-wX-3qK" collectionClass="NSMutableArray" id="Rkn-11-syM"/>
             </connections>
-            <point key="canvasLocation" x="206" y="424.5"/>
+            <point key="canvasLocation" x="196" y="383"/>
         </tableViewCell>
     </objects>
 </document>
