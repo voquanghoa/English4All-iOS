@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
+    static var adsCouter = 0
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var questionList: UITableView!
     
@@ -25,6 +25,10 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func submitHandler(alert: UIAlertAction!) {
         finishButton.hidden = false
         submitButton.hidden = true
+        Lesson.adsCouter = Lesson.adsCouter + 1
+        if Lesson.adsCouter % 3 == 0 {
+            interstitial.presentFromRootViewController(self)
+        }
         self.questionList.reloadData()
     }
     
@@ -61,6 +65,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.questionList.dataSource = self
         self.questionList.delegate = self
         self.questionList.backgroundColor = UIColor.clearColor()
+        self.questionList.reloadData()
         
         
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
@@ -73,12 +78,8 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    func interstitialDidReceiveAd(ads: GADInterstitial){
-        //interstitial.presentFromRootViewController(self)
-    }
-    
     override func viewWillAppear(animated: Bool) {
-        self.questionList.reloadData()
+        
     }
     
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -105,6 +106,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
             (cell as! LessonViewCell).setQuestion(indexPath.row, question: dataItem, showAnswer:showAnswer)
             cell!.backgroundColor = UIColor.clearColor()
         }
+        cell!.setNeedsLayout()
         
         return cell!
     }

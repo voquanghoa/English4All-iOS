@@ -98,6 +98,8 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func showTestContent(testContent: TestContent, path:String){
-        self.navigationController?.pushViewController(Lesson(testContent: testContent, path: path), animated: true)
+        dispatch_async(dispatch_get_main_queue()){
+            self.navigationController?.pushViewController(Lesson(testContent: testContent, path: path), animated: true)
+        }
     }
 }
