@@ -14,8 +14,12 @@ class ViewUtils: NSObject {
     }
     
     class func createNoticeAlert(message: String) -> UIAlertController{
+        return createNoticeAlert(message, handler: nil)
+    }
+    
+    class func createNoticeAlert(message: String, handler: ((UIAlertAction) -> Void)?) -> UIAlertController{
         let alert = ViewUtils.createAlert(message, title: "Notice")
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: handler))
         return alert
     }
     

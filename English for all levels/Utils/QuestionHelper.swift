@@ -18,4 +18,18 @@ class QuestionHelper: NSObject {
             documentAttributes: nil)
         return attrStr
     }
+    
+    class func getTestContentResult(testContent: TestContent) -> String{
+        var correct = 0
+        var total = 0
+        for question in testContent.questions {
+            if question.anwers.count > 1 {
+                total = total + 1
+                if question.userSelected >= 0 && question.correctAnswer == question.userSelected {
+                    correct = correct + 1
+                }
+            }
+        }
+        return "\(correct)/\(total)"
+    }
 }

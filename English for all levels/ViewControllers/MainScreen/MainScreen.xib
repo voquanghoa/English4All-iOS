@@ -14,12 +14,10 @@
                 <outletCollection property="icons" destination="atu-vS-Hov" collectionClass="NSMutableArray" id="bxK-Ch-9nA"/>
                 <outletCollection property="icons" destination="UYD-hu-WYG" collectionClass="NSMutableArray" id="YQ8-JM-Vqc"/>
                 <outletCollection property="icons" destination="xCl-04-eqw" collectionClass="NSMutableArray" id="cWG-yI-Giz"/>
-                <outletCollection property="icons" destination="fZI-UL-e7h" collectionClass="NSMutableArray" id="tZ7-al-mDG"/>
                 <outletCollection property="buttons" destination="Kjj-92-kcL" collectionClass="NSMutableArray" id="Z5y-7d-SxX"/>
                 <outletCollection property="buttons" destination="nam-1c-2gY" collectionClass="NSMutableArray" id="eeU-q3-JHw"/>
                 <outletCollection property="buttons" destination="uUt-fB-UMh" collectionClass="NSMutableArray" id="QFZ-9g-dWH"/>
                 <outletCollection property="buttons" destination="3lL-rW-h40" collectionClass="NSMutableArray" id="9mZ-o8-yXF"/>
-                <outletCollection property="buttons" destination="BdI-4o-vNX" collectionClass="NSMutableArray" id="DLp-Hr-usA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -67,15 +65,6 @@
                         <action selector="onExercise:" destination="-1" eventType="touchUpInside" id="NCF-Pq-oEa"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BdI-4o-vNX">
-                    <rect key="frame" x="86" y="480" width="328" height="68"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button" image="main_menu_ranking_button.png"/>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_menu_ranking_icon.png" id="fZI-UL-e7h">
-                    <rect key="frame" x="19" y="474" width="70" height="68"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kjj-92-kcL">
                     <rect key="frame" x="86" y="147" width="328" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,8 +101,6 @@
         <image name="main_menu_header.png" width="986" height="326"/>
         <image name="main_menu_listen_button.png" width="600" height="171"/>
         <image name="main_menu_listen_icon.png" width="289" height="336"/>
-        <image name="main_menu_ranking_button.png" width="600" height="171"/>
-        <image name="main_menu_ranking_icon.png" width="289" height="336"/>
         <image name="main_menu_study_offline_button.png" width="600" height="171"/>
         <image name="main_menu_study_offline_icon.png" width="289" height="336"/>
     </resources>

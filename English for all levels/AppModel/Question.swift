@@ -46,6 +46,7 @@ class Question: NSObject {
         
         let q3 = Question()
         q3.anwers = self.anwers
+        q3.correctAnswer = self.correctAnswer
         
         questions += [q2, q3]
         

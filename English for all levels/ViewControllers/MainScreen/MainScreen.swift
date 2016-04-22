@@ -104,7 +104,7 @@ class MainScreen: DownloadViewController {
         var topItem = self.imgTitle.bounds.origin.y + self.imgTitle.bounds.height + topMargin
         let midleLayoutHeight = viewHeight - topItem - bannerHeight
         
-        let itemStepHeight = midleLayoutHeight/5
+        let itemStepHeight = midleLayoutHeight / CGFloat(buttons.count)
         
         let buttonHeight = itemStepHeight * CGFloat(100-spacingPercent)/100;
         let buttonWidth = viewWidth - 2 * commonMargin - buttonHeight

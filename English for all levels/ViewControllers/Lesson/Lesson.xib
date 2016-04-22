@@ -8,7 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Lesson" customModule="English_for_all_levels" customModuleProvider="target">
             <connections>
                 <outlet property="bannerView" destination="neF-jh-o4r" id="KHr-5G-VTi"/>
+                <outlet property="finishButton" destination="2nq-IQ-4Ir" id="9Di-3y-NBw"/>
                 <outlet property="questionList" destination="2cC-1q-T9h" id="IVB-qg-ztH"/>
+                <outlet property="submitButton" destination="OA4-0V-Lxo" id="WgU-fe-IHO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,8 +23,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="2cC-1q-T9h">
-                    <rect key="frame" x="0.0" y="70" width="320" height="448"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" id="2cC-1q-T9h">
+                    <rect key="frame" x="0.0" y="70" width="320" height="400"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -32,6 +34,22 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OA4-0V-Lxo">
+                    <rect key="frame" x="105" y="478" width="109" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <state key="normal" backgroundImage="submit.png"/>
+                    <connections>
+                        <action selector="submitButtonClick:" destination="-1" eventType="touchUpInside" id="CLd-aR-kHa"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2nq-IQ-4Ir">
+                    <rect key="frame" x="105" y="478" width="109" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <state key="normal" image="finish.png"/>
+                    <connections>
+                        <action selector="finishClick:" destination="-1" eventType="touchUpInside" id="xT0-nh-kai"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -39,6 +57,8 @@
         </view>
     </objects>
     <resources>
+        <image name="finish.png" width="588" height="144"/>
         <image name="quiz_background.png" width="720" height="1280"/>
+        <image name="submit.png" width="588" height="144"/>
     </resources>
 </document>

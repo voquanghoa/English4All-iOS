@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "English for all levels/ViewControllers/Lesson/Lesson.swift"
-            timestampString = "482898581.272156"
+            filePath = "English for all levels/ViewControllers/ListView/ListView.swift"
+            timestampString = "482988068.514211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(dataItem:parentPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

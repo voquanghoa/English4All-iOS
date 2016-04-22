@@ -11,6 +11,7 @@ import UIKit
 class LessonViewCell: UITableViewCell {
     @IBOutlet var answerTexts: [UIButton]!
     
+    var showAnswer = false
     var question: Question!
     static var custombackground:UIColor!
 
@@ -19,19 +20,22 @@ class LessonViewCell: UITableViewCell {
     }
     
     @IBAction func onAnswerClick(sender: AnyObject) {
-        let clickedButton = sender as! NSObject
+        if !showAnswer {
+            let clickedButton = sender as! NSObject
         
-        for index in 0..<answerTexts.count{
-            answerTexts[index].selected = answerTexts[index] == clickedButton
+            for index in 0..<answerTexts.count{
+                answerTexts[index].selected = answerTexts[index] == clickedButton
             
-            if(answerTexts[index].selected){
-                question.userSelected = index
+                if(answerTexts[index].selected){
+                    question.userSelected = index
+                }
             }
         }
     }
     
-    func setQuestion(index: Int, question: Question){
+    func setQuestion(index: Int, question: Question, showAnswer: Bool){
         self.question = question
+        self.showAnswer = showAnswer
         
         let answerCount = question.anwers.count
         for index in 0..<answerTexts.count{
@@ -47,9 +51,14 @@ class LessonViewCell: UITableViewCell {
                 button.hidden = false
                 button.setAttributedTitle(QuestionHelper.createHtmlAttrib(answer), forState: .Normal)
                 button.selected = true
+                //button.enabled = !showAnswer
                 
                 if(questionIndex != question.userSelected){
                     button.selected = false
+                }
+                
+                if showAnswer {
+                    
                 }
             }
         }

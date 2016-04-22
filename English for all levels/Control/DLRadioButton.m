@@ -122,7 +122,7 @@ static BOOL _groupModifing = NO;
 }
 
 - (void)touchDown {
-    [self setSelected:YES];
+    //[self setSelected:YES];
 }
 
 - (void)initRadioButton {

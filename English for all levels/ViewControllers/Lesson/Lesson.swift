@@ -9,12 +9,34 @@
 import UIKit
 import GoogleMobileAds
 
-class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate, GADInterstitialDelegate {
+class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var questionList: UITableView!
     
     var testContent: TestContent!
+    @IBOutlet weak var finishClick: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!
+    var showAnswer = false
+    
+    func submitHandler(alert: UIAlertAction!) {
+        finishButton.hidden = false
+        submitButton.hidden = true
+        self.questionList.reloadData()
+    }
+    
+    @IBAction func finishClick(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func submitButtonClick(sender: AnyObject) {
+        let message = "Your score is \(QuestionHelper.getTestContentResult(self.testContent))"
+        let alert = ViewUtils.createNoticeAlert(message, handler: submitHandler)
+        self.presentViewController(alert, animated: false, completion: nil)
+        showAnswer = true
+    }
     
     var interstitial: GADInterstitial!
     
@@ -43,7 +65,6 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate, GADI
         // Requests test ads on test devices.
         request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
         interstitial.loadRequest(request)
-        interstitial.delegate = self
         
     }
     
@@ -76,7 +97,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate, GADI
             (cell as! QuestionCell).setText(convertIndex(indexPath.row),text: dataItem.questionTitle)
         }else{
             cell = questionList.dequeueReusableCellWithIdentifier("LessonViewCell", forIndexPath: indexPath)
-            (cell as! LessonViewCell).setQuestion(indexPath.row, question: dataItem)
+            (cell as! LessonViewCell).setQuestion(indexPath.row, question: dataItem, showAnswer:showAnswer)
             cell!.backgroundColor = UIColor.clearColor()
         }
         
