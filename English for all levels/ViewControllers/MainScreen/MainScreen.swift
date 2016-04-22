@@ -33,22 +33,24 @@ class MainScreen: DownloadViewController {
     }
     
     func onDownloadDone(url:String, data:String, error:Bool){
-        var dataItem: DataItem! = nil
-        if(!error ){
-            if (url.containsString("grammar")){
-                AssertDataController.sharedInstance.loadGramarData(data)
-                dataItem = AssertDataController.sharedInstance.grammarData
+        dispatch_async(dispatch_get_main_queue()){
+            var dataItem: DataItem! = nil
+            if(!error ){
+                if (url.containsString("grammar")){
+                    AssertDataController.sharedInstance.loadGramarData(data)
+                    dataItem = AssertDataController.sharedInstance.grammarData
+                }else{
+                    AssertDataController.sharedInstance.loadExaminaton(data)
+                    dataItem = AssertDataController.sharedInstance.examination
+                }
+                self.hideDownloadIndicator({ () -> Void in
+                    self.showListView(dataItem)
+                })
             }else{
-                AssertDataController.sharedInstance.loadExaminaton(data)
-                dataItem = AssertDataController.sharedInstance.examination
+                self.hideDownloadIndicator({ () -> Void in
+                    self.showDownloadFailAlert()
+                })
             }
-            self.hideDownloadIndicator({ () -> Void in
-                self.showListView(dataItem)
-            })
-        }else{
-            self.hideDownloadIndicator({ () -> Void in
-                self.showDownloadFailAlert()
-            })
         }
     }
     
