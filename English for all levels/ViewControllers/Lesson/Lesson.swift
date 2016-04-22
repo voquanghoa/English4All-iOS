@@ -16,6 +16,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var questionList: UITableView!
     
     var testContent: TestContent!
+    var path: String!
     @IBOutlet weak var finishClick: UIButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
@@ -32,7 +33,10 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func submitButtonClick(sender: AnyObject) {
-        let message = "Your score is \(QuestionHelper.getTestContentResult(self.testContent))"
+        let correct = self.testContent.getCorrectCount()
+        let total = self.testContent.getTotal()
+        UserResultController.sharedInstance.updateScore(path, correct: correct, total: total)
+        let message = "Your score is \(correct)/\(total)"
         let alert = ViewUtils.createNoticeAlert(message, handler: submitHandler)
         self.presentViewController(alert, animated: false, completion: nil)
         showAnswer = true
@@ -40,9 +44,10 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var interstitial: GADInterstitial!
     
-    convenience init(testContent: TestContent){
+    convenience init(testContent: TestContent, path: String){
         self.init()
         self.testContent = testContent.convertToReadable()
+        self.path = path
     }
     
     override func viewDidLoad() {

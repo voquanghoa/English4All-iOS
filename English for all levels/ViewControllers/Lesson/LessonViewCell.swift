@@ -33,9 +33,28 @@ class LessonViewCell: UITableViewCell {
         }
     }
     
+    func setButtonColor(button: UIButton, color: UIColor){
+        button.setTitleColor(color, forState: UIControlState.Disabled)
+        button.setTitleColor(color, forState: UIControlState.Normal)
+        button.setTitleColor(color, forState: UIControlState.Highlighted)
+        button.setTitleColor(color, forState: UIControlState.Selected)
+        button.setTitleColor(color, forState: UIControlState.Reserved)
+        button.setTitleColor(color, forState: UIControlState.Focused)
+        button.setTitleColor(color, forState: UIControlState.Application)
+        
+        button.setTitleShadowColor(color, forState: UIControlState.Disabled)
+        button.setTitleShadowColor(color, forState: UIControlState.Normal)
+        button.setTitleShadowColor(color, forState: UIControlState.Highlighted)
+        button.setTitleShadowColor(color, forState: UIControlState.Selected)
+        button.setTitleShadowColor(color, forState: UIControlState.Reserved)
+        button.setTitleShadowColor(color, forState: UIControlState.Focused)
+        button.setTitleShadowColor(color, forState: UIControlState.Application)
+    }
+    
     func setQuestion(index: Int, question: Question, showAnswer: Bool){
         self.question = question
         self.showAnswer = showAnswer
+        self.setNeedsLayout()
         
         let answerCount = question.anwers.count
         for index in 0..<answerTexts.count{
@@ -50,16 +69,29 @@ class LessonViewCell: UITableViewCell {
                 
                 button.hidden = false
                 button.setAttributedTitle(QuestionHelper.createHtmlAttrib(answer), forState: .Normal)
-                button.selected = true
-                //button.enabled = !showAnswer
                 
+                
+                var color:UIColor!
+                if showAnswer {
+                    if(questionIndex != question.userSelected){
+                        color = UIColor.brownColor()
+                    }else if question.isCorrect(){
+                        color = UIColor.greenColor()
+                    }else{
+                        color = UIColor.redColor()
+                    }
+                }else{
+                    color = UIColor.blueColor()
+                }
+                
+                setButtonColor(button, color: color)
+                
+                button.selected = true
                 if(questionIndex != question.userSelected){
                     button.selected = false
                 }
-                
-                if showAnswer {
-                    
-                }
+                button.setNeedsLayout()
+                button.setNeedsDisplay()
             }
         }
     }

@@ -53,6 +53,7 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
         cell.setLabelText(dataItem.display)
         cell.backgroundColor = UIColor.clearColor()
         cell.setViewStyle(dataItem.children.count == 0)
+        cell.displayResultForPath("\(path)/\(dataItem.fileName)")
         
         return cell
     }
@@ -70,7 +71,7 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
     func onDownloadDone(url:String, data:String, error:Bool){
         self.hideDownloadIndicator({ () -> Void in
                 if(!error ){
-                    self.showTestContent(ContentController.decodeTestContent(data))
+                    self.showTestContent(ContentController.decodeTestContent(data), path:url)
                 }else{
                     self.showDownloadFailAlert()
                 }
@@ -78,19 +79,25 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
         )
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if UserResultController.sharedInstance.needUpdate {
+            self.ListItemView.reloadData()
+        }
+    }
+    
     func prepareShowTestContent(selectedItem: DataItem){
         let selectedPath = "\(path)/\(selectedItem.fileName)"
         
         if (selectedPath.containsString("/assets/")){
             let testContent = ContentController.loadTestContent(selectedPath)
-            showTestContent(testContent)
+            showTestContent(testContent, path:selectedPath)
         }else{
             self.showDownloadIndicator()
             HttpDownloader.load(selectedPath, completion: onDownloadDone)
         }
     }
     
-    func showTestContent(testContent: TestContent){
-        self.navigationController?.pushViewController(Lesson(testContent: testContent), animated: true)
+    func showTestContent(testContent: TestContent, path:String){
+        self.navigationController?.pushViewController(Lesson(testContent: testContent, path: path), animated: true)
     }
 }

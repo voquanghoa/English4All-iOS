@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
-        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+        UserResultController.sharedInstance.load()
             
         return true
     }

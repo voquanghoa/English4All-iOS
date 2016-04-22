@@ -32,4 +32,15 @@ class DataItemUITableViewCell: UITableViewCell {
         fileBackground.hidden = !isFile
     }
     
+    func displayResultForPath(path: String){
+        let userResult = UserResultController.sharedInstance.getScore(path)
+        
+        if userResult == nil {
+            badge.hidden = true
+        }else{
+            badge.hidden = false
+            badge.text = "\(userResult.correct)/\(userResult.total)"
+        }
+    }
+    
 }

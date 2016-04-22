@@ -31,4 +31,26 @@ class TestContent : NSObject{
         testContent.questions = questions
         return testContent
     }
+    
+    func getTotal() -> Int{
+        var total = 0
+        for question in self.questions {
+            if question.anwers.count > 1 {
+                total = total + 1
+            }
+        }
+        return total
+    }
+    
+    func getCorrectCount() -> Int{
+        var correct = 0
+        for question in self.questions {
+            if question.anwers.count > 1 {
+                if question.isCorrect() {
+                    correct = correct + 1
+                }
+            }
+        }
+        return correct
+    }
 }

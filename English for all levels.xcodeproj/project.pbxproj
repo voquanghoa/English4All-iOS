@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330697821CCA28FE0055B3CA /* UserResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330697811CCA28FE0055B3CA /* UserResultController.swift */; };
+		330697841CCA29810055B3CA /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330697831CCA29810055B3CA /* UserResult.swift */; };
+		330697861CCA2CD60055B3CA /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330697851CCA2CD60055B3CA /* JSONSerializer.swift */; };
 		331073321CBB94EE004E11A7 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331073311CBB94EE004E11A7 /* ContentController.swift */; };
 		3310E68A1CB805370021B8FE /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310E6891CB805370021B8FE /* DataItem.swift */; };
 		3333190D1CC4A065002F89C7 /* question_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3333190C1CC4A065002F89C7 /* question_normal.png */; };
@@ -62,6 +65,9 @@
 
 /* Begin PBXFileReference section */
 		0BC22BB44E3FD87A00756CF0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		330697811CCA28FE0055B3CA /* UserResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserResultController.swift; path = Controllers/UserResultController.swift; sourceTree = "<group>"; };
+		330697831CCA29810055B3CA /* UserResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserResult.swift; path = AppModel/UserResult.swift; sourceTree = "<group>"; };
+		330697851CCA2CD60055B3CA /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializer.swift; path = Utils/JSONSerializer.swift; sourceTree = "<group>"; };
 		331073311CBB94EE004E11A7 /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentController.swift; path = Controllers/ContentController.swift; sourceTree = "<group>"; };
 		3310E6891CB805370021B8FE /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataItem.swift; path = AppModel/DataItem.swift; sourceTree = "<group>"; };
 		3333190C1CC4A065002F89C7 /* question_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = question_normal.png; path = Images/question_normal.png; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				3310E6891CB805370021B8FE /* DataItem.swift */,
 				336CE3D91CBB5584000380A4 /* Question.swift */,
 				336CE3DB1CBB56A1000380A4 /* TestContent.swift */,
+				330697831CCA29810055B3CA /* UserResult.swift */,
 			);
 			name = AppModel;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 				33C9CB9F1CBA983E004061EA /* AssertDataController.swift */,
 				33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */,
 				331073311CBB94EE004E11A7 /* ContentController.swift */,
+				330697811CCA28FE0055B3CA /* UserResultController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 				336CE3CA1CBB4E40000380A4 /* ViewUtils.swift */,
 				3389D5041CC4E9E0003594FF /* GoogleAdsHelper.swift */,
 				33892EC31CC86DC000E4A5FD /* QuestionHelper.swift */,
+				330697851CCA2CD60055B3CA /* JSONSerializer.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -476,7 +485,9 @@
 				33892EBD1CC7D7D200E4A5FD /* CategoryCell.swift in Sources */,
 				336CE3CF1CBB5098000380A4 /* Lesson.swift in Sources */,
 				333FA87A1CC48D8200B05A4C /* DLRadioButton.m in Sources */,
+				330697821CCA28FE0055B3CA /* UserResultController.swift in Sources */,
 				33C9CBA91CBA9E57004061EA /* HttpDownloader.swift in Sources */,
+				330697841CCA29810055B3CA /* UserResult.swift in Sources */,
 				336CE3D71CBB54BD000380A4 /* LessonViewCell.swift in Sources */,
 				331073321CBB94EE004E11A7 /* ContentController.swift in Sources */,
 				3389D5051CC4E9E0003594FF /* GoogleAdsHelper.swift in Sources */,
@@ -484,6 +495,7 @@
 				335BF6C01CB69CEB00EE1177 /* ListView.swift in Sources */,
 				33C9CBA31CBA9877004061EA /* MainScreen.swift in Sources */,
 				33892EC41CC86DC000E4A5FD /* QuestionHelper.swift in Sources */,
+				330697861CCA2CD60055B3CA /* JSONSerializer.swift in Sources */,
 				3310E68A1CB805370021B8FE /* DataItem.swift in Sources */,
 				33C9CBA01CBA983E004061EA /* AssertDataController.swift in Sources */,
 				33C9CBA71CBA98B3004061EA /* AppDelegate.swift in Sources */,

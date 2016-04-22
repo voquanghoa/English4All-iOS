@@ -32,6 +32,14 @@ class Question: NSObject {
         self.anwers = (json["anwers"] as? [String])!
     }
     
+    func isUserSelected() -> Bool{
+        return userSelected >= 0
+    }
+    
+    func isCorrect() -> Bool{
+        return isUserSelected() && (userSelected==correctAnswer)
+    }
+    
     func extend() -> [Question]{
         var questions: [Question] = []
         
