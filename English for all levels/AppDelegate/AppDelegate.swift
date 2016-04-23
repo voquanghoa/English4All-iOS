@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
@@ -23,9 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
-        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         UserResultController.sharedInstance.load()
-            
         return true
     }
 

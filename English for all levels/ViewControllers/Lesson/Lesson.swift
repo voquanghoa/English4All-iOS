@@ -42,8 +42,6 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.presentViewController(alert, animated: false, completion: nil)
     }
     
-    var interstitial: GADInterstitial!
-    
     convenience init(testContent: TestContent, path: String){
         self.init()
         self.testContent = testContent.convertToReadable()
@@ -63,11 +61,10 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.questionList.backgroundColor = UIColor.clearColor()
         self.questionList.reloadData()
         
-        
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
         GoogleAdsHelper.loadPopup()
     }
-    
+
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
