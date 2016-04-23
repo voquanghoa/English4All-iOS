@@ -11,24 +11,21 @@ import GoogleMobileAds
 
 class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    static var adsCouter = 0
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var questionList: UITableView!
-    
-    var testContent: TestContent!
-    var path: String!
     @IBOutlet weak var finishClick: UIButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
+    
+    var testContent: TestContent!
+    var path: String!
     var showAnswer = false
     
     func submitHandler(alert: UIAlertAction!) {
         finishButton.hidden = false
         submitButton.hidden = true
-        Lesson.adsCouter = Lesson.adsCouter + 1
-        if Lesson.adsCouter % 3 == 0 {
-            interstitial.presentFromRootViewController(self)
-        }
+        GoogleAdsHelper.checkAndShowPopup(self)
+        self.showAnswer = true
         self.questionList.reloadData()
     }
     
@@ -40,10 +37,9 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let correct = self.testContent.getCorrectCount()
         let total = self.testContent.getTotal()
         UserResultController.sharedInstance.updateScore(path, correct: correct, total: total)
-        let message = "Your score is \(correct)/\(total)"
+        let message = "Your score is \(correct)/\(total)."
         let alert = ViewUtils.createNoticeAlert(message, handler: submitHandler)
         self.presentViewController(alert, animated: false, completion: nil)
-        self.showAnswer = true
     }
     
     var interstitial: GADInterstitial!
@@ -69,13 +65,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
-        
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        let request = GADRequest()
-        // Requests test ads on test devices.
-        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
-        interstitial.loadRequest(request)
-        
+        GoogleAdsHelper.loadPopup()
     }
     
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {

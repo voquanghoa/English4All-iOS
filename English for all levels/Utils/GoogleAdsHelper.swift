@@ -10,13 +10,36 @@ import UIKit
 import GoogleMobileAds
 
 class GoogleAdsHelper: NSObject {
-    static let BannerId = "ca-app-pub-3940256099942544/2934735716"
+    static let BannerId = "ca-app-pub-5633074162966218/9378032282"
+    static let PopupId = "ca-app-pub-5633074162966218/1854765484"
+    
+    class func createRequest() -> GADRequest{
+        let request = GADRequest()
+        
+        request.testDevices = [ kGADSimulatorID ]
+        
+        return request
+    }
     
     class func loadBanner(bannerView: GADBannerView, uiViewController: UIViewController){
         bannerView.adUnitID = BannerId
         bannerView.rootViewController = uiViewController
-        bannerView.loadRequest(GADRequest())
+        bannerView.loadRequest(createRequest())
     }
     
+    static var interstitial:GADInterstitial!
+    static var adsShowConter = 0
+    
+    class func loadPopup(){
+        GoogleAdsHelper.interstitial = GADInterstitial(adUnitID: GoogleAdsHelper.PopupId)
+        interstitial.loadRequest(createRequest())
+    }
+    
+    class func checkAndShowPopup(uiController: UIViewController){
+        adsShowConter = adsShowConter + 1
+        if adsShowConter % 3 == 0 {
+            interstitial.presentFromRootViewController(uiController)
+        }
+    }
     
 }
