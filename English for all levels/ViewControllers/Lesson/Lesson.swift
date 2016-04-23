@@ -43,7 +43,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let message = "Your score is \(correct)/\(total)"
         let alert = ViewUtils.createNoticeAlert(message, handler: submitHandler)
         self.presentViewController(alert, animated: false, completion: nil)
-        showAnswer = true
+        self.showAnswer = true
     }
     
     var interstitial: GADInterstitial!
