@@ -60,6 +60,8 @@
 		33C9CBA71CBA98B3004061EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CBA61CBA98B3004061EA /* AppDelegate.swift */; };
 		33C9CBA91CBA9E57004061EA /* HttpDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */; };
 		33E4E39D1CC93D9D00E4E321 /* submit.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E4E39C1CC93D9D00E4E321 /* submit.png */; };
+		33F657A31CCB259A001DBD4C /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F657A11CCB259A001DBD4C /* correct.png */; };
+		33F657A41CCB259A001DBD4C /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F657A21CCB259A001DBD4C /* incorrect.png */; };
 		AB53DB1D97093DD34947DDE1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C3B6750BF2E3B7F8B53621 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		33C9CBA61CBA98B3004061EA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate/AppDelegate.swift; sourceTree = "<group>"; };
 		33C9CBA81CBA9E57004061EA /* HttpDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpDownloader.swift; path = Controllers/HttpDownloader.swift; sourceTree = "<group>"; };
 		33E4E39C1CC93D9D00E4E321 /* submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = submit.png; path = Images/submit.png; sourceTree = "<group>"; };
+		33F657A11CCB259A001DBD4C /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = Images/correct.png; sourceTree = "<group>"; };
+		33F657A21CCB259A001DBD4C /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = incorrect.png; path = Images/incorrect.png; sourceTree = "<group>"; };
 		50C3B6750BF2E3B7F8B53621 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55852F2EC76297D88B1EAD61 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +241,8 @@
 		335BF6A41CB6675500EE1177 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				33F657A11CCB259A001DBD4C /* correct.png */,
+				33F657A21CCB259A001DBD4C /* incorrect.png */,
 				33779D7B1CC9D98A0093A0AD /* finish.png */,
 				33E4E39C1CC93D9D00E4E321 /* submit.png */,
 				33892EB91CC7D06F00E4A5FD /* splash.png */,
@@ -409,6 +415,7 @@
 				3352B7D71CB95599003F3C34 /* main_menu_grammar_icon.png in Resources */,
 				3352B7D41CB95599003F3C34 /* main_menu_examination_button.png in Resources */,
 				336CE3D81CBB54BD000380A4 /* LessonViewCell.xib in Resources */,
+				33F657A31CCB259A001DBD4C /* correct.png in Resources */,
 				336CE3D01CBB5098000380A4 /* Lesson.xib in Resources */,
 				33892EBE1CC7D7D200E4A5FD /* CategoryCell.xib in Resources */,
 				333795531CB7B19C002444F0 /* assets in Resources */,
@@ -417,6 +424,7 @@
 				3352B7DA1CB95599003F3C34 /* main_menu_listen_icon.png in Resources */,
 				33C9CBA41CBA9877004061EA /* MainScreen.xib in Resources */,
 				3352B7D31CB95599003F3C34 /* main_menu_bg.png in Resources */,
+				33F657A41CCB259A001DBD4C /* incorrect.png in Resources */,
 				335BF6811CB657D600EE1177 /* Assets.xcassets in Resources */,
 				3352B7D21CB95599003F3C34 /* back_button.png in Resources */,
 				3352B7E01CB955BB003F3C34 /* listview_background.png in Resources */,

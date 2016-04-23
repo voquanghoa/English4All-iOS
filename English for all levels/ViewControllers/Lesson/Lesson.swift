@@ -78,10 +78,6 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
-    
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

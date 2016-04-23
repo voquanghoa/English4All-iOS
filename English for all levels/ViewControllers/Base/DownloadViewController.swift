@@ -25,7 +25,9 @@ class DownloadViewController: UIViewController {
     }
     
     func showDownloadFailAlert(){
-        let downloadFailAlert = ViewUtils.createNoticeAlert("Cannot download the file. Please check you internet connection and try again later.")
-        self.presentViewController(downloadFailAlert, animated: false, completion: nil)
+        dispatch_async(dispatch_get_main_queue(), {
+            let downloadFailAlert = ViewUtils.createNoticeAlert("Cannot download the file. Please check you internet connection and try again later.")
+            self.presentViewController(downloadFailAlert, animated: false, completion: nil)
+        })
     }
 }
