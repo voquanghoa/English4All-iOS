@@ -42,10 +42,11 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.presentViewController(alert, animated: false, completion: nil)
     }
     
-    convenience init(testContent: TestContent, path: String){
+    convenience init(testContent: TestContent, path: String, name: String){
         self.init()
         self.testContent = testContent.convertToReadable()
         self.path = path
+        self.title = name
     }
     
     override func viewDidLoad() {

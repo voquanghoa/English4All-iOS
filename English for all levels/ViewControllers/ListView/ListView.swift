@@ -15,7 +15,7 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var ListItemView: UITableView!
     var dataItem:DataItem!
     var path: String!
-    
+    var selectedFileName: String!
     convenience init(dataItem: DataItem, parentPath: String) {
         self.init()
         self.path = "\(parentPath)/\(dataItem.fileName)"
@@ -87,9 +87,11 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
     
     func prepareShowTestContent(selectedItem: DataItem){
         let selectedPath = "\(path)/\(selectedItem.fileName)"
+        self.selectedFileName = selectedItem.display
         
         if (selectedPath.containsString("/assets/")){
             let testContent = ContentController.loadTestContent(selectedPath)
+            
             showTestContent(testContent, path:selectedPath)
         }else{
             self.showDownloadIndicator()
@@ -99,7 +101,7 @@ class ListView: DownloadViewController, UITableViewDataSource, UITableViewDelega
     
     func showTestContent(testContent: TestContent, path:String){
         dispatch_async(dispatch_get_main_queue()){
-            self.navigationController?.pushViewController(Lesson(testContent: testContent, path: path), animated: true)
+            self.navigationController?.pushViewController(Lesson(testContent: testContent, path: path, name: self.selectedFileName), animated: true)
         }
     }
 }
