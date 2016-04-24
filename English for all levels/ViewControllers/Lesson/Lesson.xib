@@ -35,7 +35,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OA4-0V-Lxo">
-                    <rect key="frame" x="105" y="478" width="109" height="37"/>
+                    <rect key="frame" x="103" y="478" width="113" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" backgroundImage="submit.png"/>
                     <connections>
@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2nq-IQ-4Ir">
-                    <rect key="frame" x="105" y="478" width="109" height="37"/>
+                    <rect key="frame" x="103" y="478" width="113" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" image="finish.png"/>
                     <connections>

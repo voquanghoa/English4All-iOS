@@ -14,7 +14,7 @@ class QuestionCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         label.backgroundColor = UIColor.clearColor()
-        self.backgroundColor = UIColor.clearColor()
+        //self.backgroundColor = UIColor.clearColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -89,6 +89,7 @@ class Lesson: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell = questionList.dequeueReusableCellWithIdentifier("LessonViewCell", forIndexPath: indexPath)
             (cell as! LessonViewCell).setQuestion(indexPath.row, question: dataItem, showAnswer:showAnswer)
             cell!.backgroundColor = UIColor.clearColor()
+            
         }
         cell!.setNeedsLayout()
         

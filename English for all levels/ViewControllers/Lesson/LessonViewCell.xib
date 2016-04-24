@@ -77,7 +77,6 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.85474042357764823" green="1" blue="0.96620461649009692" alpha="0.94278017241379308" colorSpace="calibratedRGB"/>
                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="nr7-Wz-Dxh" secondAttribute="trailing" constant="-4" id="7vA-P7-Mb7"/>

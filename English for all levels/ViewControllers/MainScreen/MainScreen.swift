@@ -22,8 +22,12 @@ class MainScreen: DownloadViewController {
     }
 
     @IBAction func onExercise(sender: AnyObject) {
-
-
+        let email = "voontv@gmail.com"
+        let subject = "Subject"
+        let body = "Body"
+        let url = NSURL(string: "mailto:\(email)?subject=\(subject)&body=\(body)")
+        
+        UIApplication.sharedApplication().openURL(url!)
     }
     
     func showListView(dataItem: DataItem!){
