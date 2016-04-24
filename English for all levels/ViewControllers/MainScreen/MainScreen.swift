@@ -23,8 +23,8 @@ class MainScreen: DownloadViewController {
 
     @IBAction func onExercise(sender: AnyObject) {
         let email = "voontv@gmail.com"
-        let subject = "Subject"
-        let body = "Body"
+        let subject = "[EN]Request exercise : English for all levels"
+        let body = "Enter your request here."
         let url = NSURL(string: "mailto:\(email)?subject=\(subject)&body=\(body)")
         
         UIApplication.sharedApplication().openURL(url!)
