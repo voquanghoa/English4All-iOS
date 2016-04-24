@@ -9,8 +9,8 @@
 import UIKit
 
 class QuestionHelper: NSObject {
-    class func createHtmlAttrib(html: String) -> NSAttributedString{
-        let sizeHtml = "<font size='5'>\(html)</font>"
+    class func createHtmlAttrib(html: String, mainColor: String = "white") -> NSAttributedString{
+        let sizeHtml = "<font color='\(mainColor)' size='5'>\(html)</font>"
         
         let attrStr = try! NSAttributedString(
             data: sizeHtml.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
