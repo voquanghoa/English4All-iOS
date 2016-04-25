@@ -73,11 +73,6 @@
                         <action selector="onGrammarClicked:" destination="-1" eventType="touchUpInside" id="jZ3-jz-l6G"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" id="0dM-QX-n1b" customClass="GADBannerView">
-                    <rect key="frame" x="47" y="686" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uUt-fB-UMh">
                     <rect key="frame" x="86" y="310" width="328" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,6 +81,11 @@
                         <action selector="onOfflineClicked:" destination="-1" eventType="touchUpInside" id="HLi-nw-vyd"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" id="0dM-QX-n1b" customClass="GADBannerView">
+                    <rect key="frame" x="47" y="686" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
