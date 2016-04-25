@@ -21,7 +21,7 @@
                         <color key="highlightedColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.71784298020000004" green="1" blue="0.93587330530000001" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.22755303780828851" green="0.40850453030055428" blue="0.67570112179487185" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="height" secondItem="9Fk-C6-FLt" secondAttribute="height" constant="10" id="bRf-ot-3lI"/>
                     <constraint firstItem="9Fk-C6-FLt" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-20" id="gma-t9-SmZ"/>

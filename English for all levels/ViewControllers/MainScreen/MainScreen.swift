@@ -15,22 +15,11 @@ class MainScreen: DownloadViewController {
     @IBOutlet weak var imgTitle: UIImageView!
 
     @IBOutlet weak var bannerView: GADBannerView!
-    let imgHighlight = [
-        "main_menu_grammar_button_touched",
-        "main_menu_examination_button_touched",
-        "main_menu_study_offline_button_touched",
-        "main_menu_listen_button_touched"
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
-        for index in 0..<buttons.count{
-            let highlightImg = UIImage(named:"\(imgHighlight[index]).png")
-            buttons[index].setImage(highlightImg, forState: .Selected)
-            buttons[index].setImage(highlightImg, forState: .Highlighted)
-        }
     }
 
     @IBAction func onExercise(sender: AnyObject) {
