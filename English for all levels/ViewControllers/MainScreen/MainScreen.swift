@@ -10,11 +10,11 @@ import UIKit
 import GoogleMobileAds
 
 class MainScreen: DownloadViewController {
-    @IBOutlet var icons: [UIImageView]!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var imgTitle: UIImageView!
 
     @IBOutlet weak var bannerView: GADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
@@ -95,39 +95,29 @@ class MainScreen: DownloadViewController {
     }
     
     func rearrangeGraphics()  {
-        let commonMargin = CGFloat(8)
+        let buttonSizeRatio = CGFloat(951.0/223)
         
         let viewWidth = self.view.bounds.width
         let viewHeight = self.view.bounds.height
-        
-        let commonRight = viewWidth - commonMargin
-        let commonLeft = commonMargin
-        
-        let topMargin = viewHeight * 70.0 / 900
-        let bannerHeight = CGFloat(80)
-        let spacingPercent = 15
 
-        var topItem = self.imgTitle.bounds.origin.y + self.imgTitle.bounds.height + topMargin
+        let bannerHeight = CGFloat(80)
+        let spacingPercent = 0
+
+        var topItem = self.imgTitle.frame.origin.y + self.imgTitle.bounds.height
         let midleLayoutHeight = viewHeight - topItem - bannerHeight
         
         let itemStepHeight = midleLayoutHeight / CGFloat(buttons.count)
         
-        let buttonHeight = itemStepHeight * CGFloat(100-spacingPercent)/100;
-        let buttonWidth = viewWidth - 2 * commonMargin - buttonHeight
+        let buttonHeight = itemStepHeight * CGFloat(100-spacingPercent)/100
+        let buttonWidth = buttonHeight * buttonSizeRatio
         
-        let iconSize = buttonHeight
+        let buttonHalfMargin = (itemStepHeight - buttonHeight) / 2
+        let buttonX = (viewWidth - buttonWidth)/2
         
-        let iconRight =  commonRight - iconSize
-        
-        for i in 0..<buttons.count {
-            if (i % 2 == 0){
-                icons[i].frame = CGRectMake(commonLeft, topItem, iconSize, iconSize)
-                buttons[i].frame = CGRectMake(commonRight - buttonWidth, topItem , buttonWidth, buttonHeight)
-            }else{
-                icons[i].frame = CGRectMake(iconRight, topItem, iconSize, iconSize)
-                buttons[i].frame = CGRectMake(commonLeft, topItem , buttonWidth, buttonHeight)
-            }
-            topItem = topItem + itemStepHeight
+        for index in 0..<buttons.count{
+            topItem = topItem + buttonHalfMargin
+            buttons[index].frame = CGRectMake(buttonX, topItem, buttonWidth, buttonHeight)
+            topItem = topItem + buttonHalfMargin + buttonHeight
         }
     }
 }
