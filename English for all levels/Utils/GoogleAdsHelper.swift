@@ -10,8 +10,8 @@ import UIKit
 import GoogleMobileAds
 
 class GoogleAdsHelper: NSObject {
-    static let BannerId = "ca-app-pub-5633074162966218/9378032282"
-    static let PopupId = "ca-app-pub-5633074162966218/1854765484"
+    static let BannerId = "ca-app-pub-5633074162966218/8147671087"
+    static let PopupId = "ca-app-pub-5633074162966218/9624404285"
     
     class func createRequest() -> GADRequest{
         let request = GADRequest()
