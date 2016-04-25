@@ -29,7 +29,7 @@ class Question: NSObject {
             self.category = y
         }
         
-        self.anwers = (json["anwers"] as? [String])!
+        self.anwers = (json["answers"] as? [String])!
     }
     
     func isUserSelected() -> Bool{

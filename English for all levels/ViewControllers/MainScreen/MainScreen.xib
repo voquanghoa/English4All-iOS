@@ -41,36 +41,57 @@
                     <rect key="frame" x="19" y="173" width="387" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_a1_button.png"/>
+                    <connections>
+                        <action selector="onButtonClick:" destination="-1" eventType="touchUpInside" id="uoA-YI-PdB"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hi0-we-tD3">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hi0-we-tD3">
                     <rect key="frame" x="47" y="233" width="387" height="81"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_a2_button.png"/>
+                    <connections>
+                        <action selector="onButtonClick:" destination="-1" eventType="touchUpInside" id="4x5-bQ-Etk"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h2g-jI-MZk">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h2g-jI-MZk">
                     <rect key="frame" x="0.0" y="285" width="387" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_b1_button.png"/>
+                    <connections>
+                        <action selector="onButtonClick:" destination="-1" eventType="touchUpInside" id="Xqq-4s-ZyG"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ERP-s7-esj">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ERP-s7-esj">
                     <rect key="frame" x="14" y="347" width="387" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_b2_button.png"/>
+                    <connections>
+                        <action selector="onButtonClick:" destination="-1" eventType="touchUpInside" id="6aF-M8-kGj"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tdL-w9-5QH">
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tdL-w9-5QH">
                     <rect key="frame" x="64" y="419" width="387" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_c1_button.png"/>
+                    <connections>
+                        <action selector="onButtonClick:" destination="-1" eventType="touchUpInside" id="Zu0-QI-DF5"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wOg-yc-tDI">
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wOg-yc-tDI">
                     <rect key="frame" x="34" y="479" width="387" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_grammar_button.png"/>
+                    <connections>
+                        <action selector="onButtonClick:" destination="-1" eventType="touchUpInside" id="iGk-zE-crm"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uYy-d0-oKF">
                     <rect key="frame" x="47" y="531" width="387" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_listen_button.png"/>
+                    <connections>
+                        <action selector="onExercise:" destination="-1" eventType="touchUpInside" id="qFB-wu-psp"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

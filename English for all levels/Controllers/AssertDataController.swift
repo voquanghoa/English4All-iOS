@@ -14,8 +14,6 @@ class AssertDataController: NSObject {
     static let sharedInstance = AssertDataController()
     
     var assetData:DataItem! = nil
-    var grammarData: DataItem! = nil
-    var examination: DataItem! = nil
     
     override init() {
         let resourcePath = NSBundle.mainBundle().resourcePath!
@@ -30,6 +28,15 @@ class AssertDataController: NSObject {
         }
     }
     
+    func getDataBranch(branchName:String) -> DataItem{
+        for child in self.assetData.children {
+            if child.fileName == branchName {
+                return child
+            }
+        }
+        return DataItem()
+    }
+    
     class func decodeJson(text: NSString) -> DataItem{
         do{
             let nsData = text.dataUsingEncoding(NSUTF8StringEncoding)
@@ -39,13 +46,5 @@ class AssertDataController: NSObject {
         }catch{
             return DataItem()
         }
-    }
-    
-    func loadGramarData(data: String){
-        grammarData = AssertDataController.decodeJson(data)
-    }
-    
-    func loadExaminaton(data: String){
-        examination = AssertDataController.decodeJson(data)
     }
 }

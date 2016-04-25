@@ -15,6 +15,22 @@ class MainScreen: DownloadViewController {
 
     @IBOutlet weak var bannerView: GADBannerView!
     
+    let branchName = [
+        "LEVEL_A1",
+        "LEVEL_A2",
+        "LEVEL_B1",
+        "LEVEL_B2",
+        "LEVEL_C1",
+        "GRAMMAR"
+    ]
+    
+    @IBAction func onButtonClick(sender: AnyObject) {
+        let branch = self.branchName[(sender as! UIButton).tag]
+        let dataItem = AssertDataController.sharedInstance.getDataBranch(branch)
+        showListView(dataItem)
+        print("Sender \(branch)")
+        print( (sender as! UIButton).tag)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
@@ -23,7 +39,7 @@ class MainScreen: DownloadViewController {
 
     @IBAction func onExercise(sender: AnyObject) {
         let email = "voontv@gmail.com"
-        let subject = "[EN]Request exercise : English for all levels"
+        let subject = "[EN]Request exercise : German grammar"
         let body = "Enter your request here."
         let url = NSURL(string: "mailto:\(email)?subject=\(subject)&body=\(body)")
         
@@ -32,47 +48,7 @@ class MainScreen: DownloadViewController {
     
     func showListView(dataItem: DataItem!){
         if(dataItem != nil){
-            self.navigationController?.pushViewController(ListView(dataItem: dataItem, parentPath: ""), animated: true)
-        }
-    }
-    
-    func onDownloadDone(url:String, data:String, error:Bool){
-        dispatch_async(dispatch_get_main_queue()){
-            var dataItem: DataItem! = nil
-            if(!error ){
-                if (url.containsString("grammar")){
-                    AssertDataController.sharedInstance.loadGramarData(data)
-                    dataItem = AssertDataController.sharedInstance.grammarData
-                }else{
-                    AssertDataController.sharedInstance.loadExaminaton(data)
-                    dataItem = AssertDataController.sharedInstance.examination
-                }
-                self.hideDownloadIndicator({ () -> Void in
-                    self.showListView(dataItem)
-                })
-            }else{
-                self.hideDownloadIndicator({ () -> Void in
-                    self.showDownloadFailAlert()
-                })
-            }
-        }
-    }
-    
-    @IBAction func onExaminationClicked(sender: AnyObject) {
-        if(AssertDataController.sharedInstance.examination != nil){
-            showListView(AssertDataController.sharedInstance.examination)
-        }else{
-            showDownloadIndicator()
-            HttpDownloader.load("/examination/data.json", completion: onDownloadDone)
-        }
-    }
-    
-    @IBAction func onGrammarClicked(sender: AnyObject) {
-        if(AssertDataController.sharedInstance.grammarData != nil){
-            showListView(AssertDataController.sharedInstance.grammarData)
-        }else{
-            showDownloadIndicator()
-            HttpDownloader.load("/grammar/data.json", completion: onDownloadDone)
+            self.navigationController?.pushViewController(ListView(dataItem: dataItem, parentPath: "/assets"), animated: true)
         }
     }
 
