@@ -15,6 +15,10 @@
 		3333190D1CC4A065002F89C7 /* question_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3333190C1CC4A065002F89C7 /* question_normal.png */; };
 		333795531CB7B19C002444F0 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 333795521CB7B19B002444F0 /* assets */; };
 		333FA87A1CC48D8200B05A4C /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 333FA8791CC48D8200B05A4C /* DLRadioButton.m */; };
+		3344A3E01CCDCA06000F658F /* main_menu_examination_button_touched.png in Resources */ = {isa = PBXBuildFile; fileRef = 3344A3DD1CCDCA06000F658F /* main_menu_examination_button_touched.png */; };
+		3344A3E11CCDCA06000F658F /* main_menu_grammar_button_touched.png in Resources */ = {isa = PBXBuildFile; fileRef = 3344A3DE1CCDCA06000F658F /* main_menu_grammar_button_touched.png */; };
+		3344A3E21CCDCA06000F658F /* main_menu_listen_button_touched.png in Resources */ = {isa = PBXBuildFile; fileRef = 3344A3DF1CCDCA06000F658F /* main_menu_listen_button_touched.png */; };
+		3344A3E41CCDCAE6000F658F /* main_menu_study_offline_button_touched.png in Resources */ = {isa = PBXBuildFile; fileRef = 3344A3E31CCDCAE6000F658F /* main_menu_study_offline_button_touched.png */; };
 		3352B7D21CB95599003F3C34 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C51CB95599003F3C34 /* back_button.png */; };
 		3352B7D31CB95599003F3C34 /* main_menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C61CB95599003F3C34 /* main_menu_bg.png */; };
 		3352B7D41CB95599003F3C34 /* main_menu_examination_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3352B7C71CB95599003F3C34 /* main_menu_examination_button.png */; };
@@ -75,6 +79,10 @@
 		333FA8771CC48D8100B05A4C /* English for all levels-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "English for all levels-Bridging-Header.h"; sourceTree = "<group>"; };
 		333FA8781CC48D8200B05A4C /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = Control/DLRadioButton.h; sourceTree = "<group>"; };
 		333FA8791CC48D8200B05A4C /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = Control/DLRadioButton.m; sourceTree = "<group>"; };
+		3344A3DD1CCDCA06000F658F /* main_menu_examination_button_touched.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_examination_button_touched.png; path = Images/main_menu_examination_button_touched.png; sourceTree = "<group>"; };
+		3344A3DE1CCDCA06000F658F /* main_menu_grammar_button_touched.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_grammar_button_touched.png; path = Images/main_menu_grammar_button_touched.png; sourceTree = "<group>"; };
+		3344A3DF1CCDCA06000F658F /* main_menu_listen_button_touched.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_listen_button_touched.png; path = Images/main_menu_listen_button_touched.png; sourceTree = "<group>"; };
+		3344A3E31CCDCAE6000F658F /* main_menu_study_offline_button_touched.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_study_offline_button_touched.png; path = Images/main_menu_study_offline_button_touched.png; sourceTree = "<group>"; };
 		3352B7C51CB95599003F3C34 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = Images/back_button.png; sourceTree = "<group>"; };
 		3352B7C61CB95599003F3C34 /* main_menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_bg.png; path = Images/main_menu_bg.png; sourceTree = "<group>"; };
 		3352B7C71CB95599003F3C34 /* main_menu_examination_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_menu_examination_button.png; path = Images/main_menu_examination_button.png; sourceTree = "<group>"; };
@@ -236,6 +244,10 @@
 		335BF6A41CB6675500EE1177 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3344A3E31CCDCAE6000F658F /* main_menu_study_offline_button_touched.png */,
+				3344A3DD1CCDCA06000F658F /* main_menu_examination_button_touched.png */,
+				3344A3DE1CCDCA06000F658F /* main_menu_grammar_button_touched.png */,
+				3344A3DF1CCDCA06000F658F /* main_menu_listen_button_touched.png */,
 				33F657A11CCB259A001DBD4C /* correct.png */,
 				33F657A21CCB259A001DBD4C /* incorrect.png */,
 				33779D7B1CC9D98A0093A0AD /* finish.png */,
@@ -400,9 +412,11 @@
 				33E4E39D1CC93D9D00E4E321 /* submit.png in Resources */,
 				335BF6C11CB69CEB00EE1177 /* ListView.xib in Resources */,
 				3352B7D91CB95599003F3C34 /* main_menu_listen_button.png in Resources */,
+				3344A3E41CCDCAE6000F658F /* main_menu_study_offline_button_touched.png in Resources */,
 				33BF836D1CB9DCE500FFDAD5 /* button_listview1.png in Resources */,
 				33779D7C1CC9D98A0093A0AD /* finish.png in Resources */,
 				3352B7D61CB95599003F3C34 /* main_menu_grammar_button.png in Resources */,
+				3344A3E21CCDCA06000F658F /* main_menu_listen_button_touched.png in Resources */,
 				33BF836E1CB9DCE500FFDAD5 /* button_listview2.png in Resources */,
 				3352B7D51CB95599003F3C34 /* main_menu_examination_icon.png in Resources */,
 				336CE3C71CBB441F000380A4 /* LaunchScreen.storyboard in Resources */,
@@ -412,10 +426,12 @@
 				33F657A31CCB259A001DBD4C /* correct.png in Resources */,
 				336CE3D01CBB5098000380A4 /* Lesson.xib in Resources */,
 				33892EBE1CC7D7D200E4A5FD /* CategoryCell.xib in Resources */,
+				3344A3E11CCDCA06000F658F /* main_menu_grammar_button_touched.png in Resources */,
 				333795531CB7B19C002444F0 /* assets in Resources */,
 				33B5CDD91CB8B6AE00A4FB79 /* DataItemUITableViewCell.xib in Resources */,
 				3352B7DA1CB95599003F3C34 /* main_menu_listen_icon.png in Resources */,
 				33C9CBA41CBA9877004061EA /* MainScreen.xib in Resources */,
+				3344A3E01CCDCA06000F658F /* main_menu_examination_button_touched.png in Resources */,
 				3352B7D31CB95599003F3C34 /* main_menu_bg.png in Resources */,
 				33F657A41CCB259A001DBD4C /* incorrect.png in Resources */,
 				335BF6811CB657D600EE1177 /* Assets.xcassets in Resources */,

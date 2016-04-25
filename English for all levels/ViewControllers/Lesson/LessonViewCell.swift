@@ -81,7 +81,7 @@ class LessonViewCell: UITableViewCell {
                         color = UIColor.clearColor()
                     }
                 }else{
-                    color = UIColor.whiteColor()
+                    color = UIColor.blueColor()
                 }
                 
                 setButtonColor(button, color: color)
