@@ -10,12 +10,13 @@
                 <outlet property="bannerView" destination="0dM-QX-n1b" id="4wW-RD-nsg"/>
                 <outlet property="imgTitle" destination="47d-df-zOg" id="JN0-CP-sZk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="buttons" destination="CLW-8Z-Vxp" collectionClass="NSMutableArray" id="rjh-Gh-J9J"/>
-                <outletCollection property="buttons" destination="Hi0-we-tD3" collectionClass="NSMutableArray" id="eka-XO-bOg"/>
-                <outletCollection property="buttons" destination="h2g-jI-MZk" collectionClass="NSMutableArray" id="5ms-JW-OAh"/>
-                <outletCollection property="buttons" destination="ERP-s7-esj" collectionClass="NSMutableArray" id="64f-wX-rcm"/>
-                <outletCollection property="buttons" destination="tdL-w9-5QH" collectionClass="NSMutableArray" id="4O2-qt-RtK"/>
-                <outletCollection property="buttons" destination="uYy-d0-oKF" collectionClass="NSMutableArray" id="eNG-U3-OG7"/>
+                <outletCollection property="buttons" destination="CLW-8Z-Vxp" collectionClass="NSMutableArray" id="NSc-aY-AlL"/>
+                <outletCollection property="buttons" destination="Hi0-we-tD3" collectionClass="NSMutableArray" id="NCd-kQ-Yso"/>
+                <outletCollection property="buttons" destination="h2g-jI-MZk" collectionClass="NSMutableArray" id="l8F-fN-dwe"/>
+                <outletCollection property="buttons" destination="ERP-s7-esj" collectionClass="NSMutableArray" id="LYV-Bx-sbc"/>
+                <outletCollection property="buttons" destination="tdL-w9-5QH" collectionClass="NSMutableArray" id="D1b-Yl-du1"/>
+                <outletCollection property="buttons" destination="wOg-yc-tDI" collectionClass="NSMutableArray" id="uKc-BZ-JyT"/>
+                <outletCollection property="buttons" destination="uYy-d0-oKF" collectionClass="NSMutableArray" id="oDZ-cU-cYQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -42,7 +43,7 @@
                     <state key="normal" title="Button" image="main_menu_level_a1_button.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hi0-we-tD3">
-                    <rect key="frame" x="57" y="196" width="387" height="81"/>
+                    <rect key="frame" x="47" y="233" width="387" height="81"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_a2_button.png"/>
                 </button>
@@ -52,14 +53,19 @@
                     <state key="normal" title="Button" image="main_menu_level_b1_button.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ERP-s7-esj">
-                    <rect key="frame" x="14" y="372" width="387" height="104"/>
+                    <rect key="frame" x="14" y="347" width="387" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_b2_button.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tdL-w9-5QH">
-                    <rect key="frame" x="14" y="474" width="387" height="104"/>
+                    <rect key="frame" x="64" y="419" width="387" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="main_menu_level_c1_button.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wOg-yc-tDI">
+                    <rect key="frame" x="34" y="479" width="387" height="85"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button" image="main_menu_grammar_button.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uYy-d0-oKF">
                     <rect key="frame" x="47" y="531" width="387" height="104"/>
@@ -74,6 +80,7 @@
     </objects>
     <resources>
         <image name="main_menu_bg.png" width="1080" height="1920"/>
+        <image name="main_menu_grammar_button.png" width="952" height="223"/>
         <image name="main_menu_header.png" width="900" height="409"/>
         <image name="main_menu_level_a1_button.png" width="952" height="223"/>
         <image name="main_menu_level_a2_button.png" width="951" height="223"/>
