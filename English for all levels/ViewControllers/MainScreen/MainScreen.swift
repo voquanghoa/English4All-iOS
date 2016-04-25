@@ -26,11 +26,11 @@ class MainScreen: DownloadViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
-        for index in 0..<buttons.count{
+        /*for index in 0..<buttons.count{
             let highlightImg = UIImage(named:"\(imgHighlight[index]).png")
             buttons[index].setImage(highlightImg, forState: .Selected)
             buttons[index].setImage(highlightImg, forState: .Highlighted)
-        }
+        }*/
     }
 
     @IBAction func onExercise(sender: AnyObject) {
