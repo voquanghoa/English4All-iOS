@@ -28,8 +28,6 @@ class MainScreen: DownloadViewController {
         let branch = self.branchName[(sender as! UIButton).tag]
         let dataItem = AssertDataController.sharedInstance.getDataBranch(branch)
         showListView(dataItem)
-        print("Sender \(branch)")
-        print( (sender as! UIButton).tag)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
