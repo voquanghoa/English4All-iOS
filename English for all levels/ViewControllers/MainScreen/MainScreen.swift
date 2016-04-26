@@ -76,7 +76,7 @@ class MainScreen: DownloadViewController {
         let viewWidth = self.view.bounds.width
         let viewHeight = self.view.bounds.height
 
-        let bannerHeight = CGFloat(80)
+        let bannerHeight = CGFloat(50)
         let spacingPercent = 0
 
         var topItem = self.imgTitle.frame.origin.y + self.imgTitle.bounds.height
@@ -87,13 +87,12 @@ class MainScreen: DownloadViewController {
         let buttonHeight = itemStepHeight * CGFloat(100-spacingPercent)/100
         let buttonWidth = buttonHeight * buttonSizeRatio
         
-        let buttonHalfMargin = (itemStepHeight - buttonHeight) / 2
+        let buttonMargin = (itemStepHeight - buttonHeight)
         let buttonX = (viewWidth - buttonWidth)/2
         
         for index in 0..<buttons.count{
-            topItem = topItem + buttonHalfMargin
             buttons[index].frame = CGRectMake(buttonX, topItem, buttonWidth, buttonHeight)
-            topItem = topItem + buttonHalfMargin + buttonHeight
+            topItem = topItem + buttonMargin + buttonHeight
         }
     }
 }
