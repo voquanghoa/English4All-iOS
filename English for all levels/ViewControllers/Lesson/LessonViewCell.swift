@@ -21,14 +21,11 @@ class LessonViewCell: UITableViewCell {
     
     @IBAction func onAnswerClick(sender: AnyObject) {
         if !showAnswer {
-            let clickedButton = sender as! NSObject
+            let clickedButton = sender as! DLRadioButton
+            question.userSelected = clickedButton.tag
         
             for index in 0..<answerTexts.count{
                 answerTexts[index].selected = answerTexts[index] == clickedButton
-            
-                if(answerTexts[index].selected){
-                    question.userSelected = index
-                }
             }
         }
     }
@@ -87,6 +84,7 @@ class LessonViewCell: UITableViewCell {
                 setButtonColor(button, color: color)
                 
                 button.selected = (answerIndex == question.userSelected)
+                button.tag = answerIndex
             }
         }
     }

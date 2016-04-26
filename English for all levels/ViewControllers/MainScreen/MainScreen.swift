@@ -8,8 +8,10 @@
 
 import UIKit
 import GoogleMobileAds
+import MessageUI
 
-class MainScreen: DownloadViewController {
+class MainScreen: DownloadViewController, MFMailComposeViewControllerDelegate  {
+    @IBOutlet var icons: [UIImageView]!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var imgTitle: UIImageView!
 
@@ -34,14 +36,31 @@ class MainScreen: DownloadViewController {
         self.navigationController?.navigationBarHidden = true
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
     }
-
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func onExercise(sender: AnyObject) {
-        let email = "voontv@gmail.com"
-        let subject = "[EN]Request exercise : German grammar"
-        let body = "Enter your request here."
-        let url = NSURL(string: "mailto:\(email)?subject=\(subject)&body=\(body)")
+        if MFMailComposeViewController.canSendMail() {
+            let email = "voontv@gmail.com"
+            let subject = "[EN]Request exercise : German grammar"
+            let body = "Enter your request here."
+
         
-        UIApplication.sharedApplication().openURL(url!)
+            let picker = MFMailComposeViewController()
+
+            picker.setSubject(subject)
+            picker.setMessageBody(body, isHTML: true)
+            picker.mailComposeDelegate = self
+            picker.setToRecipients([email])
+        
+            presentViewController(picker, animated: true, completion: nil)
+        }else{
+            let alert = ViewUtils.createAlert("Could Not Send Email", message: "Your device could not send e-mail.  Please check your e-mail configuration and try again.")
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: false, completion: nil)
+        }
     }
     
     func showListView(dataItem: DataItem!){
