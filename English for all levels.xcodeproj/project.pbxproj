@@ -379,7 +379,7 @@
 				TargetAttributes = {
 					335BF6751CB657D500EE1177 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2PFRNM37GD;
+						DevelopmentTeam = PKHHEH66FV;
 					};
 				};
 			};
@@ -621,7 +621,7 @@
 				INFOPLIST_FILE = "English for all levels/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "quanghoa.English-for-all-levels";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voontv.englishforall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "English for all levels/English for all levels-Bridging-Header.h";
@@ -641,7 +641,7 @@
 				INFOPLIST_FILE = "English for all levels/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "quanghoa.English-for-all-levels";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voontv.englishforall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "English for all levels/English for all levels-Bridging-Header.h";

@@ -15,8 +15,8 @@ class GoogleAdsHelper: NSObject {
     
     class func createRequest() -> GADRequest{
         let request = GADRequest()
-        
-        request.testDevices = [ kGADSimulatorID ]
+
+        request.testDevices = [ kGADSimulatorID, "86beb5d7ecb61d6d8e8a0e8c90fa8390" ]
         
         return request
     }
