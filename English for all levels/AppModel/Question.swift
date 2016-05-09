@@ -37,7 +37,7 @@ class Question: NSObject {
     }
     
     func isCorrect() -> Bool{
-        return isUserSelected() && (userSelected==correctAnswer)
+        return isUserSelected() && (userSelected-(4-self.anwers.count) == correctAnswer)
     }
     
     func extend() -> [Question]{
