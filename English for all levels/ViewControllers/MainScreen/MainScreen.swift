@@ -16,6 +16,15 @@ class MainScreen: DownloadViewController, MFMailComposeViewControllerDelegate  {
     @IBOutlet weak var imgTitle: UIImageView!
 
     @IBOutlet weak var bannerView: GADBannerView!
+    let imgHighlight = [
+        "main_menu_level_a1_button_touched",
+        "main_menu_level_a2_button_touched",
+        "main_menu_level_b1_button_touched",
+        "main_menu_level_b2_button_touched",
+        "main_menu_level_c1_button_touched",
+        "main_menu_grammar_button_touched",
+        "main_menu_listen_button_touched",
+    ]
     
     let branchName = [
         "LEVEL_A1",
@@ -35,6 +44,11 @@ class MainScreen: DownloadViewController, MFMailComposeViewControllerDelegate  {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         GoogleAdsHelper.loadBanner(bannerView, uiViewController: self)
+        for index in 0..<buttons.count{
+            let highlightImg = UIImage(named:"\(imgHighlight[index]).png")
+            buttons[index].setImage(highlightImg, forState: .Selected)
+            buttons[index].setImage(highlightImg, forState: .Highlighted)
+        }
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
