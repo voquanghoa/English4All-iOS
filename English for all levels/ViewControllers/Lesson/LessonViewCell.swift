@@ -21,13 +21,13 @@ class LessonViewCell: UITableViewCell {
     
     @IBAction func onAnswerClick(sender: AnyObject) {
         if !showAnswer {
-            let clickedButton = sender as! NSObject
+            let clickedButton = sender as! DLRadioButton
         
             for index in 0..<answerTexts.count{
                 answerTexts[index].selected = answerTexts[index] == clickedButton
             
                 if(answerTexts[index].selected){
-                    question.userSelected = index
+                    question.userSelected = clickedButton.tag
                 }
             }
         }
@@ -58,23 +58,32 @@ class LessonViewCell: UITableViewCell {
         }
         
         let answerCount = question.anwers.count
+
+        let questionShift = answerTexts.count - answerCount
+        
         for index in 0..<answerTexts.count{
             let button = answerTexts[index]
             
-            if(index < answerTexts.count - answerCount){
+            if(index < questionShift){
                 button.hidden = true
             }else{
-                let answerIndex = index - (answerTexts.count - answerCount)
+                let answerIndex = index - questionShift
                 let u = UnicodeScalar(97 + answerIndex)
                 let answer = "\(Character(u)). \(question.anwers[answerIndex])"
                 
                 button.hidden = false
                 button.setAttributedTitle(QuestionHelper.createHtmlAttrib(answer), forState: .Normal)
+                button.tag = answerIndex
                 
                 var color:UIColor!
                 if showAnswer {
                     if answerIndex == question.correctAnswer {
-                        color = UIColor.greenColor()
+                        if question.isUserSelected() {
+                            color = UIColor.greenColor()
+                        }
+                        else {
+                            color = UIColor.blueColor()
+                        }
                     }else if answerIndex == question.userSelected {
                         color = UIColor.redColor()
                     }else{
