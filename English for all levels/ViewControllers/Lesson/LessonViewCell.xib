@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,22 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="376" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BR-Hl-o3X">
-                        <rect key="frame" x="340" y="30" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="32" id="mWN-GG-0hw"/>
-                            <constraint firstAttribute="width" constant="32" id="ycc-Df-vsz"/>
-                        </constraints>
-                        <state key="normal" image="incorrect.png"/>
-                    </button>
-                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nr7-Wz-Dxh">
-                        <rect key="frame" x="340" y="30" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="32" id="7E8-k3-sh4"/>
-                            <constraint firstAttribute="width" constant="32" id="uLw-HD-pnP"/>
-                        </constraints>
-                        <state key="normal" image="correct.png"/>
-                    </button>
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vqm-1i-usN">
                         <rect key="frame" x="5" y="5" width="366" height="82"/>
                         <subviews>
@@ -79,17 +62,11 @@
                 </subviews>
                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="nr7-Wz-Dxh" secondAttribute="trailing" constant="-4" id="7vA-P7-Mb7"/>
                     <constraint firstAttribute="height" secondItem="Vqm-1i-usN" secondAttribute="height" constant="10" id="R6s-12-5qM"/>
-                    <constraint firstItem="9BR-Hl-o3X" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Td3-Kn-LU8"/>
                     <constraint firstItem="Vqm-1i-usN" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-10" id="YNb-Mg-Hb5"/>
-                    <constraint firstItem="nr7-Wz-Dxh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nZb-tK-OYc"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="9BR-Hl-o3X" secondAttribute="trailing" constant="-4" id="pcl-QV-ic9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="correctIcon" destination="nr7-Wz-Dxh" id="0Ph-w7-3Lg"/>
-                <outlet property="incorrectIcon" destination="9BR-Hl-o3X" id="S5B-v2-glW"/>
                 <outletCollection property="answerTexts" destination="fJo-jp-DA3" collectionClass="NSMutableArray" id="hE2-Ao-IC0"/>
                 <outletCollection property="answerTexts" destination="wB1-Yy-vRd" collectionClass="NSMutableArray" id="7ii-M6-4i7"/>
                 <outletCollection property="answerTexts" destination="87M-vj-0je" collectionClass="NSMutableArray" id="7B1-TN-eM4"/>
@@ -98,8 +75,4 @@
             <point key="canvasLocation" x="196" y="383"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="correct.png" width="128" height="128"/>
-        <image name="incorrect.png" width="128" height="128"/>
-    </resources>
 </document>

@@ -37,22 +37,9 @@ class LessonViewCell: UITableViewCell {
         button.setNeedsDisplay()
     }
     
-    @IBOutlet weak var correctIcon: UIButton!
-    @IBOutlet weak var incorrectIcon: UIButton!
-    
     func setQuestion(index: Int, question: Question, showAnswer: Bool){
         self.question = question
         self.showAnswer = showAnswer
-        
-        correctIcon.hidden = true
-        incorrectIcon.hidden = true
-        if showAnswer {
-            if question.isCorrect() {
-                correctIcon.hidden = false
-            }else{
-                incorrectIcon.hidden = false
-            }
-        }
         
         let answerCount = question.anwers.count
         for index in 0..<answerTexts.count{
