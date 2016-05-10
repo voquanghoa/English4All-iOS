@@ -17,6 +17,7 @@ class DataItemUITableViewCell: UITableViewCell {
     @IBOutlet weak var fileBackground: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        label.font = UIFont.boldSystemFontOfSize(19.0)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
