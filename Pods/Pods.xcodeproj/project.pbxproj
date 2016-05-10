@@ -104,6 +104,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>12E1E4DC8E5DF7427963BBCC5E34712E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D7A53CB8A90EF3A795D6650A761F31FC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>1469924FC52F60B0068FA24EEFCB3EFC</key>
 		<dict>
 			<key>buildConfigurationList</key>
@@ -217,19 +230,6 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A44836C96D94598FFEB276123121E73</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>GoogleMobileAds.framework</string>
-			<key>path</key>
-			<string>GoogleMobileAdsSdkiOS-7.7.1/GoogleMobileAds.framework</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -595,16 +595,16 @@
 				<string>1469924FC52F60B0068FA24EEFCB3EFC</string>
 			</array>
 		</dict>
-		<key>DA9C7F1A92E0A134FB3BBBCEC6F403E4</key>
+		<key>D7A53CB8A90EF3A795D6650A761F31FC</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>5A44836C96D94598FFEB276123121E73</string>
-			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
 			<key>name</key>
-			<string>Frameworks</string>
+			<string>GoogleMobileAds.framework</string>
+			<key>path</key>
+			<string>GoogleMobileAdsSdkiOS-7.8.0/GoogleMobileAds.framework</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -612,7 +612,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>DA9C7F1A92E0A134FB3BBBCEC6F403E4</string>
+				<string>12E1E4DC8E5DF7427963BBCC5E34712E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
