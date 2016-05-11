@@ -9,25 +9,53 @@
 import UIKit
 
 class LessonViewCell: UITableViewCell {
-    @IBOutlet var answerTexts: [DLRadioButton]!
+    static var answerViews:Set<LessonViewCell>!
     
+    @IBOutlet weak var answerRadioButton: DLRadioButton!
     var showAnswer = false
     var question: Question!
-    static var custombackground:UIColor!
-
+    var selectedCallback:(cell: LessonViewCell) -> Void = LessonViewCell.dummyCallBack
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        LessonViewCell.answerViews.insert(self)
+    }
+    
+    class func dummyCallBack(cell: LessonViewCell) -> Void{
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        LessonViewCell.answerViews.insert(self)
     }
     
     @IBAction func onAnswerClick(sender: AnyObject) {
         if !showAnswer {
             let clickedButton = sender as! DLRadioButton
             question.userSelected = clickedButton.tag
+            answerRadioButton.selected = true
         
-            for index in 0..<answerTexts.count{
-                answerTexts[index].selected = answerTexts[index] == clickedButton
+            for cell in LessonViewCell.answerViews {
+                if cell != self && cell.question.questionIndex == self.question.questionIndex{
+                    cell.answerRadioButton.selected = false
+                }
             }
+            selectedCallback(cell: self)
         }
+    }
+    
+    func setSelectedCallBack(callback: (cell: LessonViewCell) -> Void){
+        selectedCallback = callback
+    }
+    
+    class func InitViewSet(){
+        answerViews = Set<LessonViewCell>()
+        
     }
     
     func setButtonColor(button: DLRadioButton, color: UIColor){
@@ -37,42 +65,33 @@ class LessonViewCell: UITableViewCell {
         button.setNeedsDisplay()
     }
     
-    func setQuestion(index: Int, question: Question, showAnswer: Bool){
+    func setDisplay(question: Question, showAnswer: Bool, isSelected:Bool, isUserCorrect:Bool, isAnswerCorrect:Bool){
         self.question = question
         self.showAnswer = showAnswer
+        let u = UnicodeScalar(97 + question.answerDisplayIndex)
+        let answer = "\(Character(u)). \(question.answerDisplay)"
         
-        let answerCount = question.anwers.count
-        for index in 0..<answerTexts.count{
-            let button = answerTexts[index]
-            
-            if(index < answerTexts.count - answerCount){
-                button.hidden = true
-            }else{
-                let answerIndex = index - (answerTexts.count - answerCount)
-                let u = UnicodeScalar(97 + answerIndex)
-                let answer = "\(Character(u)). \(question.anwers[answerIndex])"
-                
-                button.hidden = false
-                button.setAttributedTitle(QuestionHelper.createHtmlAttrib(answer), forState: .Normal)
-                
-                var color:UIColor!
-                if showAnswer {
-                    if answerIndex == question.correctAnswer {
-                        color = UIColor.greenColor()
-                    }else if answerIndex == question.userSelected {
-                        color = UIColor.redColor()
-                    }else{
-                        color = UIColor.clearColor()
-                    }
+        self.answerRadioButton.setAttributedTitle(QuestionHelper.createHtmlAttrib(answer), forState: .Normal)
+        self.answerRadioButton.selected = isSelected
+        
+        var color:UIColor!
+        if showAnswer {
+            if isSelected {
+                if isUserCorrect{
+                    color = UIColor.greenColor()
                 }else{
-                    color = UIColor.blueColor()
+                    color = UIColor.redColor()
                 }
-                
-                setButtonColor(button, color: color)
-                
-                button.selected = (answerIndex == question.userSelected)
-                button.tag = answerIndex
+            }else{
+                if isAnswerCorrect {
+                    color = UIColor.blueColor()
+                }else{
+                    color = UIColor.clearColor()
+                }
             }
+        }else{
+            color = UIColor.blueColor()
         }
+        setButtonColor(answerRadioButton, color: color)
     }
 }

@@ -14,6 +14,9 @@ class Question: NSObject {
     var correctAnswer: Int = -1
     var userSelected: Int = -1
     var category: String = ""
+    var answerDisplay:String = ""
+    var questionIndex = 0
+    var answerDisplayIndex = 0
     
     var anwers: [String] = []
     
@@ -40,6 +43,14 @@ class Question: NSObject {
         return isUserSelected() && (userSelected == correctAnswer)
     }
     
+    func particularCopy(answer:[String], index:Int) -> [String]{
+        var ret:[String] = []
+        for i in 0..<answer.count{
+            ret.append(i == index ? answer[i] : "")
+        }
+        return ret
+    }
+    
     func extend() -> [Question]{
         var questions: [Question] = []
         
@@ -51,12 +62,16 @@ class Question: NSObject {
         
         let q2 = Question()
         q2.questionTitle = self.questionTitle
+        q2.questionIndex = self.questionIndex
+        questions.append(q2)
         
-        let q3 = Question()
-        q3.anwers = self.anwers
-        q3.correctAnswer = self.correctAnswer
-        
-        questions += [q2, q3]
+        for i in 0..<self.anwers.count{
+            let q3 = Question()
+            q3.answerDisplay = self.anwers[i]
+            q3.questionIndex = self.questionIndex
+            q3.answerDisplayIndex = i
+            questions.append(q3)
+        }
         
         return questions
     }

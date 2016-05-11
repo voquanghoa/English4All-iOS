@@ -23,7 +23,9 @@ class TestContent : NSObject{
     
     func convertToReadable() -> TestContent{
         var questions: [Question] = []
-        for question in self.questions {
+        for i in 0..<self.questions.count {
+            let question = self.questions[i]
+            question.questionIndex = i
             questions += question.extend()
         }
         
